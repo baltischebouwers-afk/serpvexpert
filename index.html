@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Serpvexpert — Kassen 360 dagen per jaar</title>
-  <meta name="description" content="Wij bouwen warme PVC-kassen zodat u 360 dagen per jaar van uw groenten kunt genieten." />
+  <title>Serpvexpert — PVC kozijnen en deuren</title>
+  <meta name="description" content="Demontage en montage van PVC kozijnen, ramen en deuren (Rehau). Keuze uit 2- of 3-dubbel glas. Ook LUX serres en tuinkassen." />
 
   <style>
     :root{
@@ -79,6 +79,7 @@
       padding:12px 14px; border-radius:14px;
       box-shadow: 0 10px 30px rgba(0,0,0,.25);
       font-weight:800;
+      cursor:pointer;
     }
     .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06)}
     .btn.primary{
@@ -87,18 +88,14 @@
       color:#08101f;
       box-shadow: 0 18px 50px rgba(103,232,249,.18);
     }
-    .hero{
-      padding:58px 0 22px;
-    }
+    .hero{padding:58px 0 22px;}
     .hero-grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap:18px;
       align-items:stretch;
     }
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr}
-    }
+    @media (max-width: 920px){ .hero-grid{grid-template-columns:1fr} }
     .card{
       background: rgba(255,255,255,.03);
       border:1px solid var(--line);
@@ -120,20 +117,11 @@
       background: linear-gradient(135deg, rgba(103,232,249,.95), rgba(167,139,250,.95));
       box-shadow: 0 0 0 4px rgba(103,232,249,.12);
     }
-    h1{
-      margin:14px 0 10px;
-      font-size:44px; line-height:1.05;
-      letter-spacing:-.8px;
-    }
+    h1{ margin:14px 0 10px; font-size:44px; line-height:1.05; letter-spacing:-.8px; }
     @media (max-width:520px){h1{font-size:36px}}
-    .lead{
-      margin:0; color:var(--muted); font-size:16px; line-height:1.6;
-      max-width: 56ch;
-    }
+    .lead{ margin:0; color:var(--muted); font-size:16px; line-height:1.6; max-width: 60ch; }
     .hero-cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
-    .badges{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;
-    }
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
     .badge{
       padding:10px 12px;
       border-radius:14px;
@@ -142,9 +130,7 @@
       color: var(--muted);
       font-size:13px;
     }
-    .hero-right{
-      display:flex; flex-direction:column;
-    }
+    .hero-right{display:flex; flex-direction:column;}
     .hero-img{
       position:relative;
       min-height: 320px;
@@ -182,9 +168,7 @@
     }
     h2{margin:0; font-size:24px; letter-spacing:-.2px}
     .hint{margin:0; color:var(--muted); font-size:14px}
-    .grid3{
-      display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
-    }
+    .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
     @media (max-width:920px){.grid3{grid-template-columns:1fr}}
     .feature{
       padding:16px; border-radius: var(--radius);
@@ -201,16 +185,93 @@
       font-size:18px;
     }
     .feature .p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
-    .gallery{
-      display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
+
+    /* PACKAGES */
+    .packages{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    @media (max-width: 920px){ .packages{grid-template-columns:1fr} }
+    .pkg{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 18px 50px rgba(0,0,0,.22);
+      position:relative;
+      overflow:hidden;
     }
+    .pkg .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size:12px;
+      font-weight:800;
+    }
+    .pkg .price{
+      margin-top:10px;
+      font-size:34px;
+      font-weight:950;
+      letter-spacing:-.6px;
+    }
+    .pkg .price small{
+      font-size:12px;
+      color: var(--muted);
+      font-weight:800;
+      margin-left:6px;
+    }
+    .pkg ul{
+      margin:12px 0 0;
+      padding-left:18px;
+      color: var(--muted);
+      line-height:1.55;
+    }
+    .pkg li{margin:6px 0}
+    .pkg .cta{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .pkg.featured{
+      border:0;
+      background: linear-gradient(135deg, rgba(103,232,249,.12), rgba(167,139,250,.12));
+      box-shadow: 0 26px 70px rgba(103,232,249,.14);
+    }
+    .pkg.featured:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius: calc(var(--radius) + 2px);
+      padding:2px;
+      background: linear-gradient(135deg, rgba(103,232,249,.85), rgba(167,139,250,.85));
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    .pkg .sub{ margin:8px 0 0; color: var(--muted); font-size:13px; line-height:1.5; }
+    .note{
+      margin-top:12px;
+      color: var(--muted);
+      font-size:13px;
+      line-height:1.55;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding:14px;
+    }
+
+    .gallery{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
     @media (max-width:980px){.gallery{grid-template-columns:repeat(2,1fr)}}
     .shot{
       aspect-ratio: 4/3;
       border-radius: var(--radius);
       border:1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
       position:relative; overflow:hidden;
       box-shadow: 0 18px 50px rgba(0,0,0,.22);
     }
@@ -224,9 +285,7 @@
       background: rgba(0,0,0,.12);
       font-size:13px;
     }
-    .contact{
-      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
-    }
+    .contact{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
     @media (max-width:920px){.contact{grid-template-columns:1fr}}
     .contact .card{padding:18px}
     label{display:block; font-size:13px; color:var(--muted); margin-bottom:6px}
@@ -264,7 +323,8 @@
 
       <nav>
         <a href="#why" data-i18n="nav_why">Waarom wij</a>
-        <a href="#gallery" data-i18n="nav_gallery">Foto’s</a>
+        <a href="#packages" data-i18n="nav_packages">Pakketten</a>
+        <a href="#gallery" data-i18n="nav_gallery">Projecten</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
 
@@ -282,42 +342,43 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="card hero-left">
-          <div class="kicker"><span class="dot" aria-hidden="true"></span><span data-i18n="kicker">PVC-kassen • Warm • Duurzaam</span></div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span><span data-i18n="kicker">PVC kozijnen • Ramen & deuren • Rehau</span></div>
 
-          <h1 data-i18n="h1">Kassen zodat u 360 dagen per jaar van uw groenten kunt genieten</h1>
+          <h1 data-i18n="h1">PVC kozijnen, ramen en deuren — montage door heel Nederland</h1>
 
           <p class="lead" data-i18n="lead">
-            Wij bouwen kassen met een PVC-constructie. Binnen blijft het warm en comfortabel — ideaal voor een lang seizoen.
+            Wij verzorgen de demontage van oude kozijnen en plaatsen nieuwe PVC kozijnen en deuren van Duitse kwaliteit (Rehau).
+            Kies 2- of 3-dubbel glas op basis van uw budget en comfort.
           </p>
 
           <div class="hero-cta">
             <a class="btn primary" href="#contact" data-i18n="cta_primary">Gratis advies aanvragen</a>
-            <a class="btn" href="#gallery" data-i18n="cta_secondary">Bekijk foto’s</a>
+            <a class="btn" href="#packages" data-i18n="cta_secondary">Bekijk pakketten</a>
           </div>
 
           <div class="badges">
-            <div class="badge" data-i18n="badge_1">✔ Sterke PVC-constructie</div>
-            <div class="badge" data-i18n="badge_2">✔ Warmtebehoud & comfort</div>
-            <div class="badge" data-i18n="badge_3">✔ Snelle montage</div>
+            <div class="badge" data-i18n="badge_1">✔ Demontage + montage</div>
+            <div class="badge" data-i18n="badge_2">✔ Keuze: 2-glas of 3-glas</div>
+            <div class="badge" data-i18n="badge_3">✔ Net en vakkundig geplaatst</div>
           </div>
         </div>
 
         <div class="card hero-right">
           <div class="hero-img">
-            <!-- Когда будут фото: заменим этот блок на <img src="images/hero.jpg" ...> -->
+            <!-- Later: vervang dit blok door <img src="images/hero.jpg" ...> -->
             <div class="ph" data-i18n="hero_photo_hint">
-              Plaats hier uw hoofd-foto (kas / project).<br/>
-              Later voegen we echte foto’s toe.
+              Plaats hier uw hoofd-foto (PVC kozijnen / deuren).<br/>
+              Later voegen we echte projectfoto’s toe.
             </div>
           </div>
           <div class="mini">
             <div class="m">
-              <div class="t" data-i18n="mini_1_t">360 dagen/jaar</div>
-              <div class="s" data-i18n="mini_1_s">Ontworpen voor een lang kasseizoen.</div>
+              <div class="t" data-i18n="mini_1_t">2- of 3-dubbel glas</div>
+              <div class="s" data-i18n="mini_1_s">U kiest: betaalbaar of maximaal comfort.</div>
             </div>
             <div class="m">
-              <div class="t" data-i18n="mini_2_t">PVC</div>
-              <div class="s" data-i18n="mini_2_s">Warm, praktisch en onderhoudsvriendelijk.</div>
+              <div class="t" data-i18n="mini_2_t">Rehau-profielen</div>
+              <div class="s" data-i18n="mini_2_s">Duitse kwaliteit, strak resultaat.</div>
             </div>
           </div>
         </div>
@@ -328,26 +389,89 @@
       <div class="wrap">
         <div class="section-title">
           <h2 data-i18n="why_title">Waarom Serpvexpert</h2>
-          <p class="hint" data-i18n="why_hint">Korte, duidelijke voordelen — zonder ingewikkelde woorden.</p>
+          <p class="hint" data-i18n="why_hint">Duidelijk, eerlijk en gericht op comfort en kwaliteit.</p>
         </div>
 
         <div class="grid3">
           <div class="feature">
-            <div class="icon" aria-hidden="true">🌡️</div>
-            <div style="font-weight:900" data-i18n="f1_t">Warm en stabiel klimaat</div>
-            <p class="p" data-i18n="f1_p">De constructie helpt warmte binnen te houden en beschermt tegen wind en kou.</p>
+            <div class="icon" aria-hidden="true">🏠</div>
+            <div style="font-weight:900" data-i18n="f1_t">Warmte & comfort</div>
+            <p class="p" data-i18n="f1_p">Beter geïsoleerde kozijnen met 2- of 3-dubbel glas helpen warmte binnen te houden en energiekosten te verlagen.</p>
           </div>
 
           <div class="feature">
-            <div class="icon" aria-hidden="true">🧩</div>
-            <div style="font-weight:900" data-i18n="f2_t">Snelle montage</div>
-            <p class="p" data-i18n="f2_p">Wij werken efficiënt en netjes — zodat u snel kunt beginnen met kweken.</p>
+            <div class="icon" aria-hidden="true">🛠️</div>
+            <div style="font-weight:900" data-i18n="f2_t">Strak en netjes geplaatst</div>
+            <p class="p" data-i18n="f2_p">We werken zorgvuldig: demontage, plaatsing en afwerking — met aandacht voor detail.</p>
           </div>
 
           <div class="feature">
-            <div class="icon" aria-hidden="true">📐</div>
-            <div style="font-weight:900" data-i18n="f3_t">Op maat</div>
-            <p class="p" data-i18n="f3_p">Wij passen afmetingen en indeling aan op uw tuin en wensen.</p>
+            <div class="icon" aria-hidden="true">✨</div>
+            <div style="font-weight:900" data-i18n="f3_t">Ook LUX serres & tuinkassen</div>
+            <p class="p" data-i18n="f3_p">Voor klanten die iets exclusiefs willen: maatwerk PVC-serres en tuinkassen met hoogwaardige afwerking en een premium uitstraling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 data-i18n="pkg_title">Pakketten en prijzen</h2>
+          <p class="hint" data-i18n="pkg_hint">Kies wat bij uw budget past: hoe breder het profiel en hoe beter het glas, hoe meer comfort.</p>
+        </div>
+
+        <div class="packages">
+          <div class="pkg">
+            <div class="tag" data-i18n="pkg1_tag">BASIC • 2-dubbel glas</div>
+            <div class="price">€€ <small data-i18n="pkg_from">vanaf</small></div>
+            <div class="sub" data-i18n="pkg1_sub">Betaalbare keuze met goede basis-isolatie.</div>
+            <ul>
+              <li data-i18n="pkg1_b1">PVC kozijnen + standaard 2-glas</li>
+              <li data-i18n="pkg1_b2">Geschikt voor normale isolatie-eisen</li>
+              <li data-i18n="pkg1_b3">Net geplaatst + afwerking</li>
+            </ul>
+            <div class="cta">
+              <a class="btn primary" href="#contact" data-i18n="pkg_cta">Offerte aanvragen</a>
+              <a class="btn" href="#gallery" data-i18n="pkg_view">Projecten</a>
+            </div>
+          </div>
+
+          <div class="pkg featured">
+            <div class="tag" data-i18n="pkg2_tag">COMFORT • HR++</div>
+            <div class="price">€€€ <small data-i18n="pkg_from">vanaf</small></div>
+            <div class="sub" data-i18n="pkg2_sub">Populairst: betere warmte-isolatie en comfort.</div>
+            <ul>
+              <li data-i18n="pkg2_b1">PVC kozijnen + HR++ (2-dubbel glas)</li>
+              <li data-i18n="pkg2_b2">Minder energieverlies, meer wooncomfort</li>
+              <li data-i18n="pkg2_b3">Optie: ‘warm-edge’ afstandhouder</li>
+            </ul>
+            <div class="cta">
+              <a class="btn primary" href="#contact" data-i18n="pkg_cta">Offerte aanvragen</a>
+              <a class="btn" href="#gallery" data-i18n="pkg_view">Projecten</a>
+            </div>
+          </div>
+
+          <div class="pkg">
+            <div class="tag" data-i18n="pkg3_tag">PREMIUM • 3-dubbel glas</div>
+            <div class="price">€€€€ <small data-i18n="pkg_from">vanaf</small></div>
+            <div class="sub" data-i18n="pkg3_sub">Maximale isolatie: breder profiel + 3-glas.</div>
+            <ul>
+              <li data-i18n="pkg3_b1">Breder profiel + HR+++ (3-dubbel glas)</li>
+              <li data-i18n="pkg3_b2">Top isolatie en minder geluid van buiten</li>
+              <li data-i18n="pkg3_b3">Ideaal voor comfort en energiebesparing</li>
+            </ul>
+            <div class="cta">
+              <a class="btn primary" href="#contact" data-i18n="pkg_cta">Offerte aanvragen</a>
+              <a class="btn" href="#gallery" data-i18n="pkg_view">Projecten</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <div style="font-weight:900; margin-bottom:6px" data-i18n="pkg_note_t">Belangrijk om te weten</div>
+          <div data-i18n="pkg_note_p">
+            De prijs hangt af van afmetingen, profielbreedte, type glas en montage. Hoe beter de isolatie, hoe hoger het comfort — en meestal ook de prijs.
           </div>
         </div>
       </div>
@@ -356,15 +480,15 @@
     <section id="gallery">
       <div class="wrap">
         <div class="section-title">
-          <h2 data-i18n="gallery_title">Foto’s van projecten</h2>
-          <p class="hint" data-i18n="gallery_hint">Hier zetten we straks jouw foto’s (4–12 stuks).</p>
+          <h2 data-i18n="gallery_title">Projecten en inspiratie</h2>
+          <p class="hint" data-i18n="gallery_hint">Voeg hier foto’s toe van kozijnen/deuren én luxueuze serres/kassen (4–12 stuks).</p>
         </div>
 
         <div class="gallery">
-          <div class="shot"><span data-i18n="g1">Foto 1 (kas)</span></div>
-          <div class="shot"><span data-i18n="g2">Foto 2 (binnenkant)</span></div>
-          <div class="shot"><span data-i18n="g3">Foto 3 (detail)</span></div>
-          <div class="shot"><span data-i18n="g4">Foto 4 (resultaat)</span></div>
+          <div class="shot"><span data-i18n="g1">Foto 1 (PVC kozijnen)</span></div>
+          <div class="shot"><span data-i18n="g2">Foto 2 (deur / schuifpui)</span></div>
+          <div class="shot"><span data-i18n="g3">Foto 3 (afwerking / detail)</span></div>
+          <div class="shot"><span data-i18n="g4">Foto 4 (LUX serre / tuinkas)</span></div>
         </div>
       </div>
     </section>
@@ -373,19 +497,19 @@
       <div class="wrap">
         <div class="section-title">
           <h2 data-i18n="contact_title">Contact</h2>
-          <p class="hint" data-i18n="contact_hint">Laat een bericht achter — we nemen contact met u op.</p>
+          <p class="hint" data-i18n="contact_hint">Stuur ons uw wensen — wij nemen snel contact met u op.</p>
         </div>
 
         <div class="contact">
           <div class="card">
             <div style="font-weight:900; font-size:16px; margin-bottom:10px" data-i18n="contact_left_title">Snel contact</div>
             <p class="hint" style="margin-top:0" data-i18n="contact_left_text">
-              Voeg later telefoon, WhatsApp en e-mail toe. Nu maken we alvast een nette structuur.
+              Laat uw gegevens achter. U krijgt een reactie met een voorstel op maat (2-glas/3-glas, profielkeuze en montage).
             </p>
 
             <div class="badges" style="margin-top:14px">
-              <div class="badge"><span data-i18n="loc">📍 Regio:</span> <span>NL</span></div>
-              <div class="badge"><span data-i18n="time">⏱️ Reactie:</span> <span data-i18n="time_val">meestal dezelfde dag</span></div>
+              <div class="badge"><span data-i18n="loc">📍 Werkgebied:</span> <span>NL</span></div>
+              <div class="badge"><span data-i18n="time">⏱️ Reactie:</span> <span data-i18n="time_val">meestal binnen 24 uur</span></div>
             </div>
           </div>
 
@@ -414,7 +538,7 @@
 
               <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
                 <button class="btn primary" type="submit" data-i18n="form_send">Versturen</button>
-                <a class="btn" href="#gallery" data-i18n="form_alt">Eerst foto’s bekijken</a>
+                <a class="btn" href="#packages" data-i18n="form_alt">Pakketten bekijken</a>
               </div>
 
               <p class="hint" style="margin-top:10px" data-i18n="form_note">
@@ -428,7 +552,8 @@
           <div>© <span id="y"></span> Serpvexpert</div>
           <div class="smalllinks">
             <a href="#why" data-i18n="nav_why">Waarom wij</a>
-            <a href="#gallery" data-i18n="nav_gallery">Foto’s</a>
+            <a href="#packages" data-i18n="nav_packages">Pakketten</a>
+            <a href="#gallery" data-i18n="nav_gallery">Projecten</a>
             <a href="#contact" data-i18n="nav_contact">Contact</a>
           </div>
         </div>
@@ -439,114 +564,166 @@
   <script>
     const dict = {
       nl: {
-  nav_why: "Waarom wij",
-  nav_gallery: "Projecten",
-  nav_contact: "Contact",
-  cta_top: "Offerte aanvragen",
+        nav_why: "Waarom wij",
+        nav_packages: "Pakketten",
+        nav_gallery: "Projecten",
+        nav_contact: "Contact",
+        cta_top: "Offerte aanvragen",
 
-  // HERO (основной продукт — окна/двери)
-  kicker: "PVC kozijnen • Ramen & deuren • Rehau",
-  h1: "PVC kozijnen, ramen en deuren — montage door heel Nederland",
-  lead: "Wij verzorgen de demontage van oude kozijnen en plaatsen nieuwe PVC kozijnen en deuren van Duitse kwaliteit (Rehau). Kies 2- of 3-dubbel glas op basis van uw budget en comfort.",
-  cta_primary: "Gratis advies aanvragen",
-  cta_secondary: "Bekijk projecten",
-  badge_1: "✔ Demontage + montage",
-  badge_2: "✔ Keuze: 2-glas of 3-glas",
-  badge_3: "✔ Net en vakkundig geplaatst",
-  hero_photo_hint: "Plaats hier uw hoofd-foto (PVC kozijnen / deuren).<br/>Later voegen we echte projectfoto’s toe.",
+        kicker: "PVC kozijnen • Ramen & deuren • Rehau",
+        h1: "PVC kozijnen, ramen en deuren — montage door heel Nederland",
+        lead: "Wij verzorgen de demontage van oude kozijnen en plaatsen nieuwe PVC kozijnen en deuren van Duitse kwaliteit (Rehau). Kies 2- of 3-dubbel glas op basis van uw budget en comfort.",
+        cta_primary: "Gratis advies aanvragen",
+        cta_secondary: "Bekijk pakketten",
+        badge_1: "✔ Demontage + montage",
+        badge_2: "✔ Keuze: 2-glas of 3-glas",
+        badge_3: "✔ Net en vakkundig geplaatst",
+        hero_photo_hint: "Plaats hier uw hoofd-foto (PVC kozijnen / deuren).<br/>Later voegen we echte projectfoto’s toe.",
 
-  mini_1_t: "2- of 3-dubbel glas",
-  mini_1_s: "U kiest: betaalbaar of maximaal comfort.",
-  mini_2_t: "Rehau-profielen",
-  mini_2_s: "Duitse kwaliteit, strak resultaat.",
+        mini_1_t: "2- of 3-dubbel glas",
+        mini_1_s: "U kiest: betaalbaar of maximaal comfort.",
+        mini_2_t: "Rehau-profielen",
+        mini_2_s: "Duitse kwaliteit, strak resultaat.",
 
-  // WHY (плюсы + LUX теплицы как премиум направление)
-  why_title: "Waarom Serpvexpert",
-  why_hint: "Duidelijk, eerlijk en gericht op comfort en kwaliteit.",
-  f1_t: "Warmte & comfort",
-  f1_p: "Beter geïsoleerde kozijnen met 2- of 3-dubbel glas helpen warmte binnen te houden en energiekosten te verlagen.",
-  f2_t: "Strak en netjes geplaatst",
-  f2_p: "We werken zorgvuldig: demontage, plaatsing en afwerking — met aandacht voor detail.",
-  f3_t: "Ook LUX serres & tuinkassen",
-  f3_p: "Voor klanten die iets exclusiefs willen: maatwerk PVC-serres en tuinkassen met hoogwaardige afwerking en een premium uitstraling.",
+        why_title: "Waarom Serpvexpert",
+        why_hint: "Duidelijk, eerlijk en gericht op comfort en kwaliteit.",
+        f1_t: "Warmte & comfort",
+        f1_p: "Beter geïsoleerde kozijnen met 2- of 3-dubbel glas helpen warmte binnen te houden en energiekosten te verlagen.",
+        f2_t: "Strak en netjes geplaatst",
+        f2_p: "We werken zorgvuldig: demontage, plaatsing en afwerking — met aandacht voor detail.",
+        f3_t: "Ook LUX serres & tuinkassen",
+        f3_p: "Voor klanten die iets exclusiefs willen: maatwerk PVC-serres en tuinkassen met hoogwaardige afwerking en een premium uitstraling.",
 
-  // GALLERY
-  gallery_title: "Projecten en inspiratie",
-  gallery_hint: "Voeg hier foto’s toe van kozijnen/deuren én luxueuze serres/kassen (4–12 stuks).",
-  g1: "Foto 1 (PVC kozijnen)",
-  g2: "Foto 2 (deur / schuifpui)",
-  g3: "Foto 3 (afwerking / detail)",
-  g4: "Foto 4 (LUX serre / tuinkas)",
+        pkg_title: "Pakketten en prijzen",
+        pkg_hint: "Kies wat bij uw budget past: hoe breder het profiel en hoe beter het glas, hoe meer comfort.",
+        pkg_from: "vanaf",
+        pkg_cta: "Offerte aanvragen",
+        pkg_view: "Projecten",
 
-  // CONTACT
-  contact_title: "Contact",
-  contact_hint: "Stuur ons uw wensen — wij nemen snel contact met u op.",
-  contact_left_title: "Snel contact",
-  contact_left_text: "Laat uw gegevens achter. U krijgt een reactie met een voorstel op maat (2-glas/3-glas, profielkeuze en montage).",
-  loc: "📍 Werkgebied:",
-  time: "⏱️ Reactie:",
-  time_val: "meestal binnen 24 uur",
+        pkg1_tag: "BASIC • 2-dubbel glas",
+        pkg1_sub: "Betaalbare keuze met goede basis-isolatie.",
+        pkg1_b1: "PVC kozijnen + standaard 2-glas",
+        pkg1_b2: "Geschikt voor normale isolatie-eisen",
+        pkg1_b3: "Net geplaatst + afwerking",
 
-  // FORM
-  form_name: "Naam",
-  form_phone: "Telefoon",
-  form_email: "E-mail",
-  form_msg: "Bericht",
-  form_send: "Versturen",
-  form_alt: "Eerst projecten bekijken",
-  form_note: "Let op: dit formulier gebruikt nu e-mail (mailto). Later kunnen we een professioneel formulier koppelen."
-},
+        pkg2_tag: "COMFORT • HR++",
+        pkg2_sub: "Populairst: betere warmte-isolatie en comfort.",
+        pkg2_b1: "PVC kozijnen + HR++ (2-dubbel glas)",
+        pkg2_b2: "Minder energieverlies, meer wooncomfort",
+        pkg2_b3: "Optie: ‘warm-edge’ afstandhouder",
+
+        pkg3_tag: "PREMIUM • 3-dubbel glas",
+        pkg3_sub: "Maximale isolatie: breder profiel + 3-glas.",
+        pkg3_b1: "Breder profiel + HR+++ (3-dubbel glas)",
+        pkg3_b2: "Top isolatie en minder geluid van buiten",
+        pkg3_b3: "Ideaal voor comfort en energiebesparing",
+
+        pkg_note_t: "Belangrijk om te weten",
+        pkg_note_p: "De prijs hangt af van afmetingen, profielbreedte, type glas en montage. Hoe beter de isolatie, hoe hoger het comfort — en meestal ook de prijs.",
+
+        gallery_title: "Projecten en inspiratie",
+        gallery_hint: "Voeg hier foto’s toe van kozijnen/deuren én luxueuze serres/kassen (4–12 stuks).",
+        g1: "Foto 1 (PVC kozijnen)",
+        g2: "Foto 2 (deur / schuifpui)",
+        g3: "Foto 3 (afwerking / detail)",
+        g4: "Foto 4 (LUX serre / tuinkas)",
+
+        contact_title: "Contact",
+        contact_hint: "Stuur ons uw wensen — wij nemen snel contact met u op.",
+        contact_left_title: "Snel contact",
+        contact_left_text: "Laat uw gegevens achter. U krijgt een reactie met een voorstel op maat (2-glas/3-glas, profielkeuze en montage).",
+        loc: "📍 Werkgebied:",
+        time: "⏱️ Reactie:",
+        time_val: "meestal binnen 24 uur",
+
+        form_name: "Naam",
+        form_phone: "Telefoon",
+        form_email: "E-mail",
+        form_msg: "Bericht",
+        form_send: "Versturen",
+        form_alt: "Pakketten bekijken",
+        form_note: "Let op: dit formulier gebruikt nu e-mail (mailto). Later kunnen we een professioneel formulier koppelen."
+      },
+
       en: {
         nav_why: "Why us",
-        nav_gallery: "Photos",
+        nav_packages: "Packages",
+        nav_gallery: "Projects",
         nav_contact: "Contact",
         cta_top: "Request a quote",
 
-        kicker: "PVC greenhouses • Warm • Durable",
-        h1: "Greenhouses so you can enjoy your vegetables 360 days a year",
-        lead: "We build greenhouses with a PVC construction. Inside stays warm and comfortable — perfect for a longer season.",
+        kicker: "PVC frames • Windows & doors • Rehau",
+        h1: "PVC windows & doors — installation across the Netherlands",
+        lead: "We remove old frames and install new PVC windows and doors with German-quality Rehau profiles. Choose double or triple glazing based on your budget and comfort.",
         cta_primary: "Get free advice",
-        cta_secondary: "View photos",
-        badge_1: "✔ Strong PVC frame",
-        badge_2: "✔ Heat retention & comfort",
-        badge_3: "✔ Fast installation",
-        hero_photo_hint: "Place your main photo here (greenhouse / project).<br/>We will add real photos later.",
+        cta_secondary: "View packages",
+        badge_1: "✔ Removal + installation",
+        badge_2: "✔ Choice: double or triple glazing",
+        badge_3: "✔ Clean professional finish",
+        hero_photo_hint: "Place your main photo here (PVC windows / doors).<br/>We will add real project photos later.",
 
-        mini_1_t: "360 days/year",
-        mini_1_s: "Designed for a long growing season.",
-        mini_2_t: "PVC",
-        mini_2_s: "Warm, practical and easy to maintain.",
+        mini_1_t: "Double or triple glazing",
+        mini_1_s: "You choose: budget-friendly or maximum comfort.",
+        mini_2_t: "Rehau profiles",
+        mini_2_s: "German quality, clean result.",
 
         why_title: "Why Serpvexpert",
-        why_hint: "Clear benefits — no complicated wording.",
-        f1_t: "Warm, stable climate",
-        f1_p: "The construction helps keep warmth inside and protects from wind and cold.",
-        f2_t: "Fast installation",
-        f2_p: "We work efficiently and neatly — so you can start growing sooner.",
-        f3_t: "Custom fit",
-        f3_p: "We adapt size and layout to your garden and your needs.",
+        why_hint: "Clear, honest and focused on comfort and quality.",
+        f1_t: "Warmth & comfort",
+        f1_p: "Better-insulated frames with double or triple glazing help keep heat inside and reduce energy costs.",
+        f2_t: "Neat installation",
+        f2_p: "We work carefully: removal, installation and finishing — with attention to detail.",
+        f3_t: "Also LUX conservatories & greenhouses",
+        f3_p: "For clients who want something exclusive: custom PVC conservatories and premium greenhouses with high-end finishing.",
 
-        gallery_title: "Project photos",
-        gallery_hint: "We will place your photos here (4–12 images).",
-        g1: "Photo 1 (greenhouse)",
-        g2: "Photo 2 (inside)",
-        g3: "Photo 3 (details)",
-        g4: "Photo 4 (result)",
+        pkg_title: "Packages & pricing",
+        pkg_hint: "Pick what fits your budget: the wider the profile and the better the glass, the more comfort.",
+        pkg_from: "from",
+        pkg_cta: "Request a quote",
+        pkg_view: "Projects",
+
+        pkg1_tag: "BASIC • Double glazing",
+        pkg1_sub: "Affordable option with solid basic insulation.",
+        pkg1_b1: "PVC frames + standard double glazing",
+        pkg1_b2: "Suitable for regular insulation needs",
+        pkg1_b3: "Neat installation + finishing",
+
+        pkg2_tag: "COMFORT • HR++",
+        pkg2_sub: "Most popular: better insulation and comfort.",
+        pkg2_b1: "PVC frames + HR++ (double glazing)",
+        pkg2_b2: "Less heat loss, more comfort",
+        pkg2_b3: "Option: warm-edge spacer",
+
+        pkg3_tag: "PREMIUM • Triple glazing",
+        pkg3_sub: "Maximum insulation: wider profile + triple glazing.",
+        pkg3_b1: "Wider profile + HR+++ (triple glazing)",
+        pkg3_b2: "Top insulation and less outside noise",
+        pkg3_b3: "Great for comfort and energy saving",
+
+        pkg_note_t: "Good to know",
+        pkg_note_p: "Pricing depends on dimensions, profile width, glazing type and installation. Better insulation usually means more comfort — and a higher price.",
+
+        gallery_title: "Projects & inspiration",
+        gallery_hint: "Add photos of windows/doors and luxury conservatories/greenhouses (4–12 images).",
+        g1: "Photo 1 (PVC frames)",
+        g2: "Photo 2 (door / sliding system)",
+        g3: "Photo 3 (finishing / detail)",
+        g4: "Photo 4 (LUX conservatory / greenhouse)",
 
         contact_title: "Contact",
-        contact_hint: "Leave a message — we will get back to you.",
+        contact_hint: "Send your request — we will get back to you quickly.",
         contact_left_title: "Quick contact",
-        contact_left_text: "Later we will add phone, WhatsApp and email. For now we build a clean structure.",
-        loc: "📍 Region:",
+        contact_left_text: "Leave your details. You'll get a tailored proposal (double/triple glazing, profile choice and installation).",
+        loc: "📍 Area:",
         time: "⏱️ Reply:",
-        time_val: "usually same day",
+        time_val: "usually within 24 hours",
 
         form_name: "Name",
         form_phone: "Phone",
         form_email: "Email",
         form_msg: "Message",
         form_send: "Send",
-        form_alt: "View photos first",
+        form_alt: "View packages",
         form_note: "Note: this form currently uses email (mailto). Later we can connect a proper form service."
       }
     };
@@ -562,19 +739,16 @@
       document.getElementById("btn-nl").classList.toggle("active", lang === "nl");
       document.getElementById("btn-en").classList.toggle("active", lang === "en");
 
-      // Title + description can be swapped too (simple)
       document.title = (lang === "nl")
-        ? "Serpvexpert — Kassen 360 dagen per jaar"
-        : "Serpvexpert — Greenhouses 360 days a year";
+        ? "Serpvexpert — PVC kozijnen en deuren"
+        : "Serpvexpert — PVC windows & doors";
     };
 
     document.getElementById("btn-nl").addEventListener("click", () => setLang("nl"));
     document.getElementById("btn-en").addEventListener("click", () => setLang("en"));
 
-    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Simple mailto form
     document.getElementById("leadForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
@@ -582,17 +756,16 @@
       const email = document.getElementById("email").value.trim();
       const msg = document.getElementById("msg").value.trim();
 
-      const subject = encodeURIComponent("Serpvexpert — aanvraag");
+      const subject = encodeURIComponent("Serpvexpert — aanvraag / request");
       const body = encodeURIComponent(
-        `Naam: ${name}\nTelefoon: ${phone}\nEmail: ${email}\n\nBericht:\n${msg}\n`
+        `Name/Naam: ${name}\nPhone/Telefoon: ${phone}\nEmail: ${email}\n\nMessage/Bericht:\n${msg}\n`
       );
 
-      // TODO: заменишь на свой email позже
-      const to = "your-email@example.com";
+      // TODO: replace with your email
+      const to = "sergio@serrgio.com";
       window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     });
 
-    // Default language
     setLang("nl");
   </script>
 </body>
