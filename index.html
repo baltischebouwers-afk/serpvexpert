@@ -94,15 +94,15 @@
   padding:58px 0 22px;
   position: relative;
   overflow: hidden;
-  background: black !important;
 }
-    .hero::before{
+
+.hero::before{
   content:"";
   position:absolute;
   inset:0;
   background:
     linear-gradient(180deg, rgba(11,18,32,.70), rgba(11,18,32,.55) 45%, rgba(11,18,32,.78)),
-    url("images/hero-bg.jpg.png");
+    url("images/hero-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -118,13 +118,14 @@
   background:
     radial-gradient(900px 520px at 18% 25%, rgba(103,232,249,.18), transparent 55%),
     radial-gradient(900px 520px at 85% 20%, rgba(167,139,250,.18), transparent 55%);
-  z-index: 0;
+  z-index: 1;
   pointer-events:none;
+
 }
 
 .hero .wrap{
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
     .hero-grid{
       display:grid;
