@@ -236,8 +236,50 @@
   letter-spacing:-.8px;
 }
 
+@media (max-width: 920px){
+  .topbar .inner{ gap:10px; }
+  nav{ display:none; }                 /* чтобы шапка не ломалась на узких экранах */
+
+  .hero{ min-height: calc(100vh - 64px); }
+
+  .hero-grid{
+    grid-template-columns: 1fr;
+    gap:12px;
+  }
+
+  .hero-left{ padding:18px; }
+  .hero h1{ font-size:34px; }
+  .hero .lead{ font-size:15px; }
+
+  .hero-cta{ gap:10px; }
+  .hero .btn,
+  .hero a.btn{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .badges{ gap:8px; }
+  .badge{ width:100%; }
+
+  .hero-img{ min-height: 220px; }
+  .mini{ grid-template-columns: 1fr; }
+}
+
+/* Очень маленькие экраны */
 @media (max-width: 520px){
-  .hero h1{ font-size:36px; }
+  .wrap{ padding: 0 14px; }
+  .hero h1{ font-size:30px; }
+  .lang{ padding:4px; }
+  .lang button{ padding:8px 9px; }
+}
+
+/* Оптимизация эффекта фона для мобильных (меньше лагов) */
+@media (max-width: 920px){
+  .hero::before{
+    filter: none;
+    transform: none;
+  }
+}
 }
 
 .hero .lead{
