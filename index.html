@@ -450,9 +450,18 @@ body::after{
       color: var(--muted);
       line-height:1.55;
     }
-    .lux-list li{ margin:6px 0; }
-    .lux-cta{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
-  </style>
+  <style>
+.lux-list li { margin:6px 0; }
+.lux-cta { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+
+.hero {
+  background-image: url("/images/bg/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+}
+</style>
 </head>
 
 <body>
@@ -479,6 +488,8 @@ body::after{
       </div>
     </div>
   </header>
+
+  <section class="hero"></section>
 
   <main>
     <section class="hero">
