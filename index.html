@@ -675,6 +675,17 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
     padding: 10px 14px;
     font-size: 15px;
   }
+}/* FIX background crop on mobile */
+@media (max-width: 920px) and (orientation: portrait){
+  .hero::before{
+    background-position: 50% 20%;
+  }
+}
+
+@media (max-width: 920px) and (orientation: landscape){
+  .hero::before{
+    background-position: 50% 42%;
+  }
 }
 </style>
 </head>
