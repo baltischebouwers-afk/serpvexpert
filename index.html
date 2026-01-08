@@ -635,29 +635,38 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.16);
-  background: transparent; /* <= prozrachnyj fon vnutri kartochki */
+  background: transparent;           /* прозрачный фон */
   box-shadow: 0 24px 80px rgba(0,0,0,.35);
-  min-height: 320px;
+
+  /* меньше размер */
+  min-height: 240px;
+  max-width: 420px;
+  margin-left: auto;                /* прижать вправо в колонке */
 }
 
 .window-motion{
   position: absolute;
   inset: 0;
   z-index: 0;
+
   background:
-    linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.60)),
+    linear-gradient(180deg, rgba(11,18,32,.20), rgba(11,18,32,.55)),
     url("/images/images/hero/window-pan.jpeg");
-  background-size: auto 115%;
   background-repeat: repeat-x;
+  background-size: auto 115%;
   background-position: 0% 50%;
-  filter: saturate(1.05) contrast(1.06);
+
   transform: scale(1.02);
-  animation: panX 16s ease-in-out infinite alternate;
+  will-change: background-position;
+
+  /* ВАЖНО: не alternate, а по кругу в одну сторону */
+  animation: panX 18s linear infinite;
 }
 
+/* бесконечный “скролл” вправо */
 @keyframes panX{
   from { background-position: 0% 50%; }
-  to   { background-position: 100% 50%; }
+  to   { background-position: 200% 50%; }  /* 200% даёт более плавный цикл */
 }
 
 .hero-product-label{
@@ -673,24 +682,10 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 }
 .hero-product-label .t{ color:#fff; font-weight:900; font-size:14px; }
 .hero-product-label .s{ color:rgba(255,255,255,.78); font-size:12px; margin-top:3px; }
-}
 
-.window-motion{
-  position:absolute; inset:0;
-  background:
-    linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.60)),
- background: url("/images/images/hero/window-pan.jpeg");
-  background-size: auto 115%;
-  background-repeat: repeat-x;
-  background-position: 0% 50%;
-  filter: saturate(1.05) contrast(1.06);
-  transform: scale(1.02);
-  animation: panX 16s ease-in-out infinite alternate;
-}
-
-@keyframes panX{
-  from { background-position: 0% 50%; }
-  to   { background-position: 100% 50%; }
+/* адаптация */
+@media (max-width: 920px){
+  .hero-product{ max-width: 100%; min-height: 220px; }
 }
 
 .nl-profile{
