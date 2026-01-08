@@ -627,6 +627,59 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 
 .lux-list li { margin:6px 0; }
 .lux-cta { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+    /* =========================
+   HERO PRODUCT (NL PROFILE)
+   ========================= */
+.hero-product{
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 24px 80px rgba(0,0,0,.35);
+  min-height: 320px;
+}
+
+.window-motion{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.60)),
+    url("/images/hero/window-pan.jpg");
+  background-size: auto 115%;
+  background-repeat: repeat-x;
+  background-position: 0% 50%;
+  filter: saturate(1.05) contrast(1.06);
+  transform: scale(1.02);
+  animation: panX 16s ease-in-out infinite alternate;
+}
+
+@keyframes panX{
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+.nl-profile{
+  position:absolute;
+  right: 14px;
+  bottom: 12px;
+  width: min(360px, 78%);
+  height: auto;
+  filter: drop-shadow(0 18px 34px rgba(0,0,0,.48));
+  transform: rotate(-2deg);
+}
+
+.hero-product-label{
+  position:absolute;
+  left: 14px;
+  top: 12px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(8,12,20,.40);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+}
+.hero-product-label .t{color:#fff; font-weight:900; font-size:14px;}
+.hero-product-label .s{color:rgba(255,255,255,.78); font-size:12px; margin-top:3px;}
 </style>
  <style>
 /* Portrait mobile fix */
@@ -705,82 +758,61 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 
   <main>
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="card hero-left">
-          <div class="kicker"><span class="dot" aria-hidden="true"></span><span data-i18n="kicker">PVC kozijnen • Ramen & deuren • Rehau</span></div>
+  <div class="wrap hero-grid">
 
-          <h1 data-i18n="h1">PVC kozijnen, ramen en deuren — montage door heel Nederland</h1>
+    <div class="card hero-left">
+      <div class="kicker">
+        <span class="dot" aria-hidden="true"></span>
+        <span data-i18n="kicker">PVC kozijnen • Ramen & deuren • Rehau</span>
+      </div>
 
-          <p class="lead" data-i18n="lead">
-            Wij verzorgen de demontage van oude kozijnen en plaatsen nieuwe PVC kozijnen en deuren van Duitse kwaliteit (Rehau).
-            Kies 2- of 3-dubbel glas op basis van uw budget en comfort.
-          </p>
+      <h1 data-i18n="h1">PVC kozijnen, ramen en deuren — montage door heel Nederland</h1>
 
-          <div class="hero-cta">
-            <a class="btn primary" href="#contact" data-i18n="cta_primary">Gratis advies aanvragen</a>
-            <a class="btn" href="#packages" data-i18n="cta_secondary">Bekijk pakketten</a>
-          </div>
+      <p class="lead" data-i18n="lead">
+        Wij verzorgen de demontage van oude kozijnen en plaatsen nieuwe PVC kozijnen en deuren van Duitse kwaliteit (Rehau).
+        Kies 2- of 3-dubbel glas op basis van uw budget en comfort.
+      </p>
 
-          <div class="badges">
-            <div class="badge" data-i18n="badge_1">✔ Demontage + montage</div>
-            <div class="badge" data-i18n="badge_2">✔ Keuze: 2-glas of 3-glas</div>
-            <div class="badge" data-i18n="badge_3">✔ Net en vakkundig geplaatst</div>
-          </div>
-        </div>
+      <div class="hero-cta">
+        <a class="btn primary" href="#contact" data-i18n="cta_primary">Gratis advies aanvragen</a>
+        <a class="btn" href="#packages" data-i18n="cta_secondary">Bekijk pakketten</a>
+      </div>
 
-        <div class="hero-img">
-  <div class="ph" style="border-style:solid; border-color: rgba(255,255,255,.10);">
-    <div style="max-width:36ch">
-      <div style="font-weight:950; color: var(--text); margin-bottom:6px">PVC oplossingen</div>
-      <div style="color: var(--muted); line-height:1.45">
-        Ramen • deuren • terras-systemen • serres / tuinkassen (PVC)
+      <div class="badges">
+        <div class="badge" data-i18n="badge_1">✔ Demontage + montage</div>
+        <div class="badge" data-i18n="badge_2">✔ Keuze: 2-glas of 3-glas</div>
+        <div class="badge" data-i18n="badge_3">✔ Net en vakkundig geplaatst</div>
       </div>
     </div>
+
+    <div class="hero-right">
+      <div class="hero-product">
+        <div class="window-motion" aria-hidden="true"></div>
+
+        <img class="nl-profile"
+             src="/images/hero/nl-profile.webp"
+             alt="NL breed profiel (antraciet), 3-dubbel glas" />
+
+        <div class="hero-product-label">
+          <div class="t">NL profiel · 3-dubbel glas</div>
+          <div class="s">Breed · Warm · Stil</div>
+        </div>
+      </div>
+
+      <div class="mini">
+        <div class="m">
+          <div class="t" data-i18n="mini_1_t">2- of 3-dubbel glas</div>
+          <div class="s" data-i18n="mini_1_s">U kiest: betaalbaar of maximaal comfort.</div>
+        </div>
+        <div class="m">
+          <div class="t" data-i18n="mini_2_t">Rehau-profielen</div>
+          <div class="s" data-i18n="mini_2_s">Duitse kwaliteit, strak resultaat.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
-          </div>
-          <div class="mini">
-            <div class="m">
-              <div class="t" data-i18n="mini_1_t">2- of 3-dubbel glas</div>
-              <div class="s" data-i18n="mini_1_s">U kiest: betaalbaar of maximaal comfort.</div>
-            </div>
-            <div class="m">
-              <div class="t" data-i18n="mini_2_t">Rehau-profielen</div>
-              <div class="s" data-i18n="mini_2_s">Duitse kwaliteit, strak resultaat.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="why">
-      <div class="wrap">
-        <div class="section-title">
-          <h2 data-i18n="why_title">Waarom Serpvexpert</h2>
-          <p class="hint" data-i18n="why_hint">Duidelijk, eerlijk en netjes uitgevoerd.</p>
-        </div>
-
-        <div class="grid3">
-          <div class="feature" data-href="why-montage.html" role="button" tabindex="0">
-            <div class="icon" aria-hidden="true">🏠</div>
-            <div style="font-weight:900" data-i18n="f1_t">Vakkundige montage</div>
-            <p class="p" data-i18n="f1_p">We werken nauwkeurig en laten alles netjes achter. Afwerking tot in detail.</p>
-          </div>
-
-          <div class="feature" data-href="why-prijsopties.html" role="button" tabindex="0">
-            <div class="icon" aria-hidden="true">🛠️</div>
-            <div style="font-weight:900" data-i18n="f2_t">Heldere prijsopties</div>
-            <p class="p" data-i18n="f2_p">U kiest het pakket dat bij uw budget past — zonder verwarring of verborgen kosten.</p>
-          </div>
-
-          <div class="feature" data-href="why-lux.html" role="button" tabindex="0">
-            <div class="icon" aria-hidden="true">✨</div>
-            <div style="font-weight:900" data-i18n="f3_t">Ook LUX serres & tuinkassen</div>
-            <p class="p" data-i18n="f3_p">Exclusieve maatwerkoplossingen voor klanten die iets bijzonders willen (premium klasse).</p>
-          </div>
-        </div>
-      </div>
-    </section>
+</section>
 
     <section id="packages">
       <div class="wrap">
