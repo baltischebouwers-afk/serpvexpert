@@ -652,29 +652,19 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 }
 
 /* Portrait fine-tune (final) */
-@media (max-width: 520px){
-  .hero{
-    padding-top: 12px;
-    padding-bottom: 18px;
   }
+}/* FIX background crop on mobile */
+@media (max-width: 420px) and (orientation: portrait){
+  .hero::before{
+    background-position: 10% 20%;
+  }
+}
 
-  .hero-left{
-    padding-top: 12px;
+@media (max-width: 920px) and (orientation: landscape){
+  .hero::before{
+    background-position: 50% 42%;
   }
-
-  .hero h1{
-    margin-top: 8px;
-  }
-
-  .hero-cta{
-    margin-top: 14px;
-  }
-
-  .hero .btn,
-  .hero a.btn{
-    padding: 10px 14px;
-    font-size: 15px;
-  }
+}
 }/* FIX background crop on mobile */
 @media (max-width: 420px) and (orientation: portrait){
   .hero::before{
