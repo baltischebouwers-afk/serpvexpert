@@ -642,6 +642,51 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 
 .window-motion{
   position:absolute; inset:0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.60)),
+    url("/images/images/hero/window-pan.jpeg"); /* <-- ВАЖНО: jpeg и твой путь */
+  background-size: auto 115%;
+  background-repeat: repeat-x;
+  background-position: 0% 50%;
+  filter: saturate(1.05) contrast(1.06);
+  transform: scale(1.02);
+  animation: panX 16s ease-in-out infinite alternate;
+}
+
+@keyframes panX{
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+.nl-profile{
+  position:absolute;
+  z-index: 2;
+  right: 14px;
+  bottom: 12px;
+  width: min(360px, 78%);
+  height: auto;
+  filter: drop-shadow(0 18px 34px rgba(0,0,0,.48));
+  transform: rotate(-2deg);
+}
+
+.hero-product-label{
+  position:absolute;
+  z-index: 3;
+  left: 14px;
+  top: 12px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(8,12,20,.40);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+}
+.hero-product-label .t{color:#fff; font-weight:900; font-size:14px;}
+.hero-product-label .s{color:rgba(255,255,255,.78); font-size:12px; margin-top:3px;}
+}
+
+.window-motion{
+  position:absolute; inset:0;
   background:
     linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.60)),
     url("images/hero/window-pan.jpg");
@@ -757,7 +802,7 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 
 
   <main>
-    <section class="hero">
+   <section class="hero">
   <div class="wrap hero-grid">
 
     <div class="card hero-left">
@@ -790,7 +835,7 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
         <div class="window-motion" aria-hidden="true"></div>
 
         <img class="nl-profile"
-             src="/images/images/hero/window-pan.jpeg");
+             src="/images/images/hero/nl-profile.webp"
              alt="NL breed profiel (antraciet), 3-dubbel glas" />
 
         <div class="hero-product-label">
