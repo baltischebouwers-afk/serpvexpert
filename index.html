@@ -635,14 +635,16 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.16);
-  background: transparent;
+  background: transparent; /* ПРОЗРАЧНО */
   box-shadow: 0 24px 80px rgba(0,0,0,.35);
 
-  min-height: 240px;
-  max-width: 420px;
-  margin-left: auto;
+  /* нормальный, но меньше чем раньше */
+  height: 260px;
+  max-width: 520px;
+  margin-left: auto; /* прижать вправо в колонке */
 }
 
+/* панорама “крутится” в одну сторону по кругу */
 .window-motion{
   position: absolute;
   inset: 0;
@@ -651,19 +653,59 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
   background:
     linear-gradient(180deg, rgba(11,18,32,.20), rgba(11,18,32,.55)),
     url("/images/images/hero/window-pan.jpeg");
+
   background-repeat: repeat-x;
   background-size: auto 115%;
-  background-position: 0% 50%;
+  background-position: 0px 50%;
 
   transform: scale(1.02);
   will-change: background-position;
 
+  /* ВАЖНО: linear + infinite (не туда‑сюда) */
   animation: panX 18s linear infinite;
 }
 
 @keyframes panX{
-  from { background-position: 0% 50%; }
-  to   { background-position: 200% 50%; }
+  from { background-position: 0px 50%; }
+  to   { background-position: -1600px 50%; }
+}
+
+/* 3D профиль поверх панорамы */
+.nl-profile{
+  position: absolute;
+  z-index: 2;
+  right: 14px;
+  bottom: 10px;
+  width: min(320px, 72%);
+  height: auto;
+  filter: drop-shadow(0 18px 34px rgba(0,0,0,.48));
+  transform: rotate(-2deg);
+}
+
+.hero-product-label{
+  position: absolute;
+  z-index: 3;
+  left: 14px;
+  top: 12px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(8,12,20,.40);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+}
+.hero-product-label .t{ color:#fff; font-weight:900; font-size:14px; }
+.hero-product-label .s{ color:rgba(255,255,255,.78); font-size:12px; margin-top:3px; }
+
+/* адаптация */
+@media (max-width: 920px){
+  .hero-product{
+    max-width: 100%;
+    margin-left: 0;
+    height: 240px;
+  }
+  .nl-profile{
+    width: min(300px, 78%);
+  }
 }
 </style>
  <style>
@@ -772,6 +814,13 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 <div class="hero-right">
   <div class="hero-product">
     <div class="window-motion" aria-hidden="true"></div>
+
+    <img class="nl-profile" src="/images/images/hero/nl-profile.webp" alt="NL breed profiel (antraciet), 3-dubbel glas" loading="lazy" />
+
+    <div class="hero-product-label">
+      <div class="t">NL profiel · 3-dubbel glas</div>
+      <div class="s">Breed · Warm · Stil</div>
+    </div>
   </div>
 </div>
 
