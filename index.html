@@ -628,24 +628,25 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 .lux-list li { margin:6px 0; }
 .lux-cta { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
     /* =========================
-   HERO PRODUCT (NL PROFILE)
+   HERO PRODUCT (PANORAMA)
    ========================= */
 .hero-product{
   position: relative;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.04);
+  background: transparent; /* <= prozrachnyj fon vnutri kartochki */
   box-shadow: 0 24px 80px rgba(0,0,0,.35);
   min-height: 320px;
 }
 
 .window-motion{
-  position:absolute; inset:0;
+  position: absolute;
+  inset: 0;
   z-index: 0;
   background:
     linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.60)),
-    url("/images/images/hero/window-pan.jpeg"); /* <-- ВАЖНО: jpeg и твой путь */
+    url("/images/images/hero/window-pan.jpeg");
   background-size: auto 115%;
   background-repeat: repeat-x;
   background-position: 0% 50%;
@@ -659,20 +660,9 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
   to   { background-position: 100% 50%; }
 }
 
-.nl-profile{
-  position:absolute;
-  z-index: 2;
-  right: 14px;
-  bottom: 12px;
-  width: min(360px, 78%);
-  height: auto;
-  filter: drop-shadow(0 18px 34px rgba(0,0,0,.48));
-  transform: rotate(-2deg);
-}
-
 .hero-product-label{
-  position:absolute;
-  z-index: 3;
+  position: absolute;
+  z-index: 1;
   left: 14px;
   top: 12px;
   padding: 10px 12px;
@@ -681,15 +671,15 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
   border: 1px solid rgba(255,255,255,.14);
   backdrop-filter: blur(10px);
 }
-.hero-product-label .t{color:#fff; font-weight:900; font-size:14px;}
-.hero-product-label .s{color:rgba(255,255,255,.78); font-size:12px; margin-top:3px;}
+.hero-product-label .t{ color:#fff; font-weight:900; font-size:14px; }
+.hero-product-label .s{ color:rgba(255,255,255,.78); font-size:12px; margin-top:3px; }
 }
 
 .window-motion{
   position:absolute; inset:0;
   background:
     linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.60)),
-    url("/images/images/hero/window-pan.jpeg")
+ background: url("/images/images/hero/window-pan.jpeg");
   background-size: auto 115%;
   background-repeat: repeat-x;
   background-position: 0% 50%;
@@ -829,7 +819,7 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
       </div>
     </div>
 
-    <div class="hero-right">
+<div class="hero-right">
   <div class="hero-product">
     <div class="window-motion" aria-hidden="true"></div>
 
