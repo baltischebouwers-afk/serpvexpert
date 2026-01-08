@@ -654,10 +654,18 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
 /* Portrait fine-tune (final) */
   }
 
-}/* FIX background crop on mobile */
-@media (max-width: 920px) and (orientation: portrait){
+/* Оптимизация эффекта фона для мобильных (меньше лагов) */
+@media (max-width: 920px){
   .hero::before{
-    background-position: 12% 8% !important;
+    filter: none;
+    transform: none;
+  }
+}
+
+/* FIX background crop on mobile (как ты хочешь) */
+@media (max-width: 420px) and (orientation: portrait){
+  .hero::before{
+    background-position: 18% 38% !important; /* <= если надо, подвинем */
   }
 }
 
