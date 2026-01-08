@@ -635,13 +635,12 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.16);
-  background: transparent;           /* прозрачный фон */
+  background: transparent;
   box-shadow: 0 24px 80px rgba(0,0,0,.35);
 
-  /* меньше размер */
   min-height: 240px;
   max-width: 420px;
-  margin-left: auto;                /* прижать вправо в колонке */
+  margin-left: auto;
 }
 
 .window-motion{
@@ -659,48 +658,12 @@ h2{ margin:0; font-size:24px; letter-spacing:-.2px; }
   transform: scale(1.02);
   will-change: background-position;
 
-  /* ВАЖНО: не alternate, а по кругу в одну сторону */
-  animation: panX 18s linear infinite;
-}
-
-/* бесконечный “скролл” вправо */
-@keyframes panX{
-  from { background-position: 0% 50%; }
-  to   { background-position: 200% 50%; }  /* 200% даёт более плавный цикл */
-}
-
-.hero-product{
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.04);
-  box-shadow: 0 24px 80px rgba(0,0,0,.35);
-
-  /* размер меньше */
-  height: 260px;
-  max-width: 520px;
-  margin-left: auto; /* прижать вправо */
-}
-
-.window-motion{
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(11,18,32,.25), rgba(11,18,32,.60)),
-    url("/images/images/hero/window-pan.jpeg");
-  background-size: auto 115%;
-  background-repeat: repeat-x;
-  background-position: 0% 50%;
-  transform: scale(1.02);
-
-  /* важно: крутится “в одну сторону”, не туда-сюда */
   animation: panX 18s linear infinite;
 }
 
 @keyframes panX{
   from { background-position: 0% 50%; }
-  to   { background-position: 100% 50%; }
+  to   { background-position: 200% 50%; }
 }
 </style>
  <style>
