@@ -587,26 +587,27 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
       </div>
       <a href="https://wa.me/31657825303" class="wa-contact" target="_blank">💬 <span data-nl="Direct WhatsApp sturen" data-en="Send WhatsApp directly">Direct WhatsApp sturen</span></a>
     </div>
-    <div class="cform rv rd2">
+    <form class="cform rv rd2" id="contactForm" action="https://formspree.io/f/xqenvbvk" method="POST">
       <div class="crow">
-        <input class="fi" type="text" placeholder="Naam" data-nl-ph="Naam" data-en-ph="Name">
-        <input class="fi" type="tel" placeholder="Telefoon" data-nl-ph="Telefoon" data-en-ph="Phone">
+        <input class="fi" type="text" name="naam" placeholder="Naam" required>
+        <input class="fi" type="tel" name="telefoon" placeholder="Telefoon">
       </div>
-      <input class="fi" type="email" placeholder="E-mailadres">
-      <select class="fi">
-        <option data-nl="Wat heeft u nodig?" data-en="What do you need?">Wat heeft u nodig?</option>
-        <option data-nl="REHAU Ramen & Kozijnen" data-en="REHAU Windows & Frames">REHAU Ramen & Kozijnen</option>
-        <option data-nl="Panoramische schuifpui" data-en="Panoramic sliding door">Panoramische schuifpui</option>
-        <option data-nl="Zwarte / antraciet kozijnen" data-en="Black / anthracite frames">Zwarte / antraciet kozijnen</option>
-        <option data-nl="Bio Serre / Tuinkas" data-en="Bio Greenhouse">Bio Serre / Tuinkas</option>
-        <option data-nl="Combinatie ramen + serre" data-en="Combination windows + greenhouse">Combinatie ramen + serre</option>
+      <input class="fi" type="email" name="email" placeholder="E-mailadres" required>
+      <select class="fi" name="dienst">
+        <option value="">Wat heeft u nodig?</option>
+        <option value="REHAU Ramen & Kozijnen">REHAU Ramen & Kozijnen</option>
+        <option value="Panoramische schuifpui">Panoramische schuifpui</option>
+        <option value="Zwarte / antraciet kozijnen">Zwarte / antraciet kozijnen</option>
+        <option value="Bio Serre / Tuinkas">Bio Serre / Tuinkas</option>
+        <option value="Combinatie ramen + serre">Combinatie ramen + serre</option>
       </select>
-      <textarea class="fi" placeholder="Vertel over uw project..." data-nl-ph="Vertel over uw project..." data-en-ph="Tell us about your project..."></textarea>
+      <textarea class="fi" name="bericht" placeholder="Vertel over uw project..."></textarea>
       <div class="f-btns">
-        <button class="fb1" id="sendBtn" data-nl="Versturen →" data-en="Send →">Versturen →</button>
-        <a href="https://wa.me/31657825303" class="fb2" target="_blank">💬 WhatsApp</a>
+        <button class="fb1" type="submit" id="sendBtn">Versturen →</button>
+        <a href="https://wa.me/31657825303?text=Hallo%20EnergyDream%2C%20ik%20heb%20interesse%20in%20uw%20diensten." class="fb2" target="_blank">💬 WhatsApp</a>
       </div>
-    </div>
+      <div id="form-success" style="display:none;color:#7ab896;font-size:.85rem;margin-top:8px;">✓ Bedankt! We nemen binnen 24 uur contact met u op.</div>
+    </form>
   </div>
 </section>
 
@@ -680,11 +681,30 @@ function toggleMenu(){
   document.getElementById('burger').classList.toggle('open');
   document.getElementById('nav-mobile').classList.toggle('open');
 }
-document.getElementById('sendBtn').addEventListener('click',function(){
-  const orig=this.textContent;
-  this.textContent=lang==='nl'?'Verzonden ✓':'Sent ✓';
-  this.style.background='#3d7a52';
-  setTimeout(()=>{this.style.background='';this.textContent=orig},3000);
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var btn=document.getElementById('sendBtn');
+  var orig=btn.textContent;
+  btn.textContent='Versturen...';
+  btn.disabled=true;
+  fetch('https://formspree.io/f/xqenvbvk',{
+    method:'POST',
+    body:new FormData(this),
+    headers:{'Accept':'application/json'}
+  }).then(function(r){
+    if(r.ok){
+      document.getElementById('form-success').style.display='block';
+      document.getElementById('contactForm').reset();
+      btn.textContent='Verzonden ✓';
+      btn.style.background='#3d7a52';
+    } else {
+      btn.textContent=orig;
+      btn.disabled=false;
+    }
+  }).catch(function(){
+    btn.textContent=orig;
+    btn.disabled=false;
+  });
 });
 </script>
 <div id="lightbox">
