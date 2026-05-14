@@ -52,6 +52,12 @@ nav.solid{background:rgba(8,8,8,.97);border-color:var(--border);backdrop-filter:
 .gi img{width:100%;height:200px;object-fit:contain;display:block;padding:16px;background:var(--dark);transition:transform .3s}
 .gi:hover img{transform:scale(1.03)}
 .gi img{cursor:zoom-in}
+#lb{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.93);align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img{max-width:90vw;max-height:85vh;object-fit:contain}
+#lb-x{position:absolute;top:20px;right:28px;background:none;border:1px solid rgba(224,219,208,.3);color:#f0ece3;font-size:1.3rem;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#lb-x:hover{background:rgba(201,169,110,.2)}
+.gi img{cursor:zoom-in}
 #lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);align-items:center;justify-content:center}
 #lightbox.open{display:flex}
 #lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border:1px solid rgba(201,169,110,.2)}
@@ -265,17 +271,17 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
     <div class="modal-body">
     <p class="modal-desc" data-nl="Maximaal licht, minimaal frame. REHAU schuifpuien bieden een naadloze verbinding tussen binnen en buiten. Beschikbaar in wit, antraciet (RAL 7016) en houtlook. Inclusief 2- of 3-dubbel glas." data-en="Maximum light, minimal frame. REHAU sliding doors offer a seamless connection between inside and outside. Available in white, anthracite (RAL 7016) and wood effect.">Maximaal licht, minimaal frame. REHAU schuifpuien bieden een naadloze verbinding tussen binnen en buiten. Beschikbaar in wit, antraciet (RAL 7016) en houtlook.</p>
     <div class="modal-grid">
-<div class="gi"><img src="images/foto03.jpg" alt="Panoramische schuifpui antraciet"></div>
-<div class="gi"><img src="images/foto04.jpg" alt="Schuifpui profiel"></div>
-<div class="gi"><img src="images/foto05.jpg" alt="REHAU schuifdeur"></div>
-<div class="gi"><img src="images/foto06.jpg" alt="Panoramische pui woning"></div>
-<div class="gi"><img src="images/foto07.jpg" alt="Schuifpui terras"></div>
-<div class="gi"><img src="images/foto08.jpg" alt="Glijdende deur tuin"></div>
-<div class="gi"><img src="images/foto09.jpg" alt="Schuifpui zwart tuin"></div>
-<div class="gi"><img src="images/foto10.jpg" alt="Panoramisch raam"></div>
-<div class="gi"><img src="images/foto11.jpg" alt="REHAU schuifpui modern"></div>
-<div class="gi"><img src="images/foto12.jpg" alt="Schuifpui terras design"></div>
-<div class="gi"><img src="images/foto13.jpg" alt="REHAU slinova schuifpui"></div>
+<div class="gi"><img onclick="lbOpen('images/foto03.jpg','Panoramische schuifpui antraciet')" src="images/foto03.jpg" alt="Panoramische schuifpui antraciet"></div>
+<div class="gi"><img onclick="lbOpen('images/foto04.jpg','Schuifpui profiel')" src="images/foto04.jpg" alt="Schuifpui profiel"></div>
+<div class="gi"><img onclick="lbOpen('images/foto05.jpg','REHAU schuifdeur')" src="images/foto05.jpg" alt="REHAU schuifdeur"></div>
+<div class="gi"><img onclick="lbOpen('images/foto06.jpg','Panoramische pui woning')" src="images/foto06.jpg" alt="Panoramische pui woning"></div>
+<div class="gi"><img onclick="lbOpen('images/foto07.jpg','Schuifpui terras')" src="images/foto07.jpg" alt="Schuifpui terras"></div>
+<div class="gi"><img onclick="lbOpen('images/foto08.jpg','Glijdende deur tuin')" src="images/foto08.jpg" alt="Glijdende deur tuin"></div>
+<div class="gi"><img onclick="lbOpen('images/foto09.jpg','Schuifpui zwart tuin')" src="images/foto09.jpg" alt="Schuifpui zwart tuin"></div>
+<div class="gi"><img onclick="lbOpen('images/foto10.jpg','Panoramisch raam')" src="images/foto10.jpg" alt="Panoramisch raam"></div>
+<div class="gi"><img onclick="lbOpen('images/foto11.jpg','REHAU schuifpui modern')" src="images/foto11.jpg" alt="REHAU schuifpui modern"></div>
+<div class="gi"><img onclick="lbOpen('images/foto12.jpg','Schuifpui terras design')" src="images/foto12.jpg" alt="Schuifpui terras design"></div>
+<div class="gi"><img onclick="lbOpen('images/foto13.jpg','REHAU slinova schuifpui')" src="images/foto13.jpg" alt="REHAU slinova schuifpui"></div>
 
     </div>
   </div>
@@ -294,11 +300,11 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
   </div>
   <div class="modal-body">
     <p class="modal-desc" data-nl="Maximale isolatie — bijna geen warmteverlies. Het 3-dubbel glas van REHAU houdt warmte perfect binnen. U bespaart significant op gas en stroom. Passive House gecertificeerd. Energieklasse A+." data-en="Maximum insulation — almost no heat loss. REHAU triple glazing keeps warmth perfectly inside. You save significantly on gas and electricity. Passive House certified.">Maximale isolatie — bijna geen warmteverlies. REHAU 3-dubbel glas houdt warmte perfect binnen. U bespaart significant op gas en stroom. Passive House gecertificeerd.</p>
-    <div class="modal-grid"><div class="gi"><img src="images/foto14.jpg" alt="REHAU 3-dubbel profiel"></div>
-<div class="gi"><img src="images/foto15.jpg" alt="REHAU zwart 3-glas"></div>
-<div class="gi"><img src="images/foto16.jpg" alt="3-dubbel tekening"></div>
-<div class="gi"><img src="images/foto17.jpg" alt="HR+++ profiel"></div>
-<div class="gi"><img src="images/foto18.jpg" alt="REHAU gecertificeerd"></div>
+    <div class="modal-grid"><div class="gi"><img onclick="lbOpen('images/foto14.jpg','REHAU 3-dubbel profiel')" src="images/foto14.jpg" alt="REHAU 3-dubbel profiel"></div>
+<div class="gi"><img onclick="lbOpen('images/foto15.jpg','REHAU zwart 3-glas')" src="images/foto15.jpg" alt="REHAU zwart 3-glas"></div>
+<div class="gi"><img onclick="lbOpen('images/foto16.jpg','3-dubbel tekening')" src="images/foto16.jpg" alt="3-dubbel tekening"></div>
+<div class="gi"><img onclick="lbOpen('images/foto17.jpg','HR+++ profiel')" src="images/foto17.jpg" alt="HR+++ profiel"></div>
+<div class="gi"><img onclick="lbOpen('images/foto18.jpg','REHAU gecertificeerd')" src="images/foto18.jpg" alt="REHAU gecertificeerd"></div>
 </div>
   </div>
   <div class="modal-cta">
@@ -315,11 +321,11 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
   </div>
   <div class="modal-body">
     <p class="modal-desc" data-nl="Zwart en antraciet (RAL 7016) zijn dé topkleuren in Nederland. Strak, modern en tijdloos. REHAU zwarte kozijnen zijn verkrijgbaar in mat zwart en antraciet — de meest gevraagde kleur op de Nederlandse markt." data-en="Black and anthracite (RAL 7016) are the top colours in the Netherlands. Sleek, modern and timeless. The most requested colour in the Dutch market.">Zwart en antraciet (RAL 7016) zijn dé topkleuren in Nederland. REHAU zwarte kozijnen — de meest gevraagde kleur op de Nederlandse markt.</p>
-    <div class="modal-grid"><div class="gi"><img src="images/foto19.jpg" alt="REHAU antraciet RAL7016"></div>
-<div class="gi"><img src="images/foto20.jpg" alt="REHAU zwart profiel"></div>
-<div class="gi"><img src="images/foto21.jpg" alt="Zwarte schuifpui"></div>
-<div class="gi"><img src="images/foto22.jpg" alt="REHAU premium zwart"></div>
-<div class="gi"><img src="images/foto23.jpg" alt="Zwarte kozijnen tekening"></div>
+    <div class="modal-grid"><div class="gi"><img onclick="lbOpen('images/foto19.jpg','REHAU antraciet RAL7016')" src="images/foto19.jpg" alt="REHAU antraciet RAL7016"></div>
+<div class="gi"><img onclick="lbOpen('images/foto20.jpg','REHAU zwart profiel')" src="images/foto20.jpg" alt="REHAU zwart profiel"></div>
+<div class="gi"><img onclick="lbOpen('images/foto21.jpg','Zwarte schuifpui')" src="images/foto21.jpg" alt="Zwarte schuifpui"></div>
+<div class="gi"><img onclick="lbOpen('images/foto22.jpg','REHAU premium zwart')" src="images/foto22.jpg" alt="REHAU premium zwart"></div>
+<div class="gi"><img onclick="lbOpen('images/foto23.jpg','Zwarte kozijnen tekening')" src="images/foto23.jpg" alt="Zwarte kozijnen tekening"></div>
 </div>
   </div>
   <div class="modal-cta">
@@ -336,7 +342,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
   </div>
   <div class="modal-body">
     <p class="modal-desc" data-nl="De populairste keuze in Nederland. HR++ glas geeft betere isolatie dan standaard 2-glas. Met warm-edge afstandhouder optie voor extra comfort. Demontage en montage inbegrepen." data-en="The most popular choice in the Netherlands. HR++ glass gives better insulation than standard double glazing. Removal and installation included.">De populairste keuze in Nederland. HR++ glas geeft betere isolatie dan standaard 2-glas. Demontage en montage inbegrepen.</p>
-    <div class="modal-grid"><div class="gi"><img src="images/foto24.jpg" alt="HR++ wit kozijn profiel"></div><div class="gi"><img src="images/foto25.jpg" alt="HR++ kozijn kleurvarianten"></div><div class="gi"><img src="images/foto26.jpg" alt="HR++ antraciet kozijn profiel"></div><div class="gi"><img src="images/foto27.jpg" alt="HR++ hout kozijn profiel"></div><div class="gi"><img src="images/foto28.jpg" alt="HR++ kozijn doorsnede wit"></div><div class="gi"><img src="images/foto29.jpg" alt="HR++ kozijn doorsnede detail"></div></div>
+    <div class="modal-grid"><div class="gi"><img onclick="lbOpen('images/foto24.jpg','HR++ wit kozijn profiel')" src="images/foto24.jpg" alt="HR++ wit kozijn profiel"></div><div class="gi"><img onclick="lbOpen('images/foto25.jpg','HR++ kozijn kleurvarianten')" src="images/foto25.jpg" alt="HR++ kozijn kleurvarianten"></div><div class="gi"><img onclick="lbOpen('images/foto26.jpg','HR++ antraciet kozijn profiel')" src="images/foto26.jpg" alt="HR++ antraciet kozijn profiel"></div><div class="gi"><img onclick="lbOpen('images/foto27.jpg','HR++ hout kozijn profiel')" src="images/foto27.jpg" alt="HR++ hout kozijn profiel"></div><div class="gi"><img onclick="lbOpen('images/foto28.jpg','HR++ kozijn doorsnede wit')" src="images/foto28.jpg" alt="HR++ kozijn doorsnede wit"></div><div class="gi"><img onclick="lbOpen('images/foto29.jpg','HR++ kozijn doorsnede detail')" src="images/foto29.jpg" alt="HR++ kozijn doorsnede detail"></div></div>
   </div>
   <div class="modal-cta">
     <a href="#contact" class="btn-gold" onclick="closeM('m-hr2')" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
@@ -352,15 +358,15 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
   </div>
   <div class="modal-body">
     <p class="modal-desc" data-nl="Verse tomaten in december. Eigen kruiden elke dag. Onze luxe serres zijn 365 dagen per jaar productief — zonder chemicaliën. Volledig op maat, premium afwerking, maximale isolatie." data-en="Fresh tomatoes in December. Your own herbs every day. Our luxury greenhouses are productive 365 days a year — without chemicals. Fully custom, premium finishing.">Verse tomaten in december. Eigen kruiden elke dag. Onze luxe serres zijn 365 dagen per jaar productief — zonder chemicaliën. Volledig op maat.</p>
-    <div class="modal-grid"><div class="gi"><img onclick="openLightbox('images/foto31.jpg','Luxe serre 2')" src="images/foto31.jpg" alt="Luxe serre 2"></div>
-<div class="gi"><img onclick="openLightbox('images/foto32.jpg','Luxe serre 3')" src="images/foto32.jpg" alt="Luxe serre 3"></div>
-<div class="gi"><img onclick="openLightbox('images/foto33.jpg','Luxe serre 4')" src="images/foto33.jpg" alt="Luxe serre 4"></div>
-<div class="gi"><img onclick="openLightbox('images/foto34.jpg','Luxe serre 5')" src="images/foto34.jpg" alt="Luxe serre 5"></div>
-<div class="gi"><img onclick="openLightbox('images/foto35.jpg','Luxe serre 6')" src="images/foto35.jpg" alt="Luxe serre 6"></div>
-<div class="gi"><img onclick="openLightbox('images/foto36.jpg','Luxe serre 7')" src="images/foto36.jpg" alt="Luxe serre 7"></div>
-<div class="gi"><img onclick="openLightbox('images/foto37.jpg','Luxe serre 8')" src="images/foto37.jpg" alt="Luxe serre 8"></div>
-<div class="gi"><img onclick="openLightbox('images/foto38.jpg','Luxe serre 9')" src="images/foto38.jpg" alt="Luxe serre 9"></div>
-<div class="gi"><img onclick="openLightbox('images/foto39.jpg','Luxe serre 10')" src="images/foto39.jpg" alt="Luxe serre 10"></div>
+    <div class="modal-grid"><div class="gi"><img onclick="lbOpen('images/foto31.jpg','Luxe serre 2')" onclick="openLightbox('images/foto31.jpg','Luxe serre 2')" src="images/foto31.jpg" alt="Luxe serre 2"></div>
+<div class="gi"><img onclick="lbOpen('images/foto32.jpg','Luxe serre 3')" onclick="openLightbox('images/foto32.jpg','Luxe serre 3')" src="images/foto32.jpg" alt="Luxe serre 3"></div>
+<div class="gi"><img onclick="lbOpen('images/foto33.jpg','Luxe serre 4')" onclick="openLightbox('images/foto33.jpg','Luxe serre 4')" src="images/foto33.jpg" alt="Luxe serre 4"></div>
+<div class="gi"><img onclick="lbOpen('images/foto34.jpg','Luxe serre 5')" onclick="openLightbox('images/foto34.jpg','Luxe serre 5')" src="images/foto34.jpg" alt="Luxe serre 5"></div>
+<div class="gi"><img onclick="lbOpen('images/foto35.jpg','Luxe serre 6')" onclick="openLightbox('images/foto35.jpg','Luxe serre 6')" src="images/foto35.jpg" alt="Luxe serre 6"></div>
+<div class="gi"><img onclick="lbOpen('images/foto36.jpg','Luxe serre 7')" onclick="openLightbox('images/foto36.jpg','Luxe serre 7')" src="images/foto36.jpg" alt="Luxe serre 7"></div>
+<div class="gi"><img onclick="lbOpen('images/foto37.jpg','Luxe serre 8')" onclick="openLightbox('images/foto37.jpg','Luxe serre 8')" src="images/foto37.jpg" alt="Luxe serre 8"></div>
+<div class="gi"><img onclick="lbOpen('images/foto38.jpg','Luxe serre 9')" onclick="openLightbox('images/foto38.jpg','Luxe serre 9')" src="images/foto38.jpg" alt="Luxe serre 9"></div>
+<div class="gi"><img onclick="lbOpen('images/foto39.jpg','Luxe serre 10')" onclick="openLightbox('images/foto39.jpg','Luxe serre 10')" src="images/foto39.jpg" alt="Luxe serre 10"></div>
 </div>
   </div>
   <div class="modal-cta">
@@ -640,6 +646,10 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
 </footer>
 
 <script>
+function lbOpen(s,a){document.getElementById('lb-img').src=s;document.getElementById('lb-img').alt=a;document.getElementById('lb').classList.add('on');document.body.style.overflow='hidden';}
+function lbClose(){document.getElementById('lb').classList.remove('on');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
+
 let lang='nl';
 function setLang(l){
   lang=l;
@@ -681,5 +691,6 @@ document.getElementById('sendBtn').addEventListener('click',function(){
   <button id="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightbox-img" src="" alt="">
 </div>
+<div id="lb"><button id="lb-x" onclick="lbClose()">✕</button><img id="lb-img" src="" alt=""></div>
 </body>
 </html>
