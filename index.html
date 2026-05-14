@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnergyDream — REHAU Ramen & Luxe Bio Serres | Heel Nederland</title>
+<meta name="description" content="REHAU kozijnen voor maximale warmte. Luxe bio-serres voor gezond leven. Heel Nederland.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --black:#080808;--dark:#111111;--dark2:#181818;
+  --gold:#c9a96e;--gold2:#e8c98a;
+  --emerald:#2d5a3d;--emerald2:#3d7a52;--sage:#7ab896;
+  --cream:#f0ece3;--text:#e0dbd0;--text2:#7a7570;
+  --border:rgba(201,169,110,0.15);--border2:rgba(201,169,110,0.32);
+}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--emerald);border-radius:2px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid transparent;transition:all .3s}
+nav.solid{background:rgba(8,8,8,.97);border-color:var(--border);backdrop-filter:blur(20px)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:var(--cream);text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-r{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--border2);border-radius:2px;overflow:hidden}
+.lang button{background:none;border:none;cursor:pointer;padding:6px 12px;font-family:'DM Sans',sans-serif;font-size:.7rem;color:var(--text2);transition:all .2s}
+.lang button.on{background:var(--gold);color:var(--black)}
+.wa-btn{display:flex;align-items:center;gap:7px;background:#25D366;color:white;padding:9px 16px;font-size:.74rem;font-weight:500;text-decoration:none}
+.wa-btn:hover{background:#1fb855}
+.cta-nav{background:var(--gold);color:var(--black);padding:10px 20px;font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.cta-nav:hover{background:var(--gold2)}
+
+/* MODALS */
+.modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.94);overflow-y:auto;flex-direction:column}
+.modal.open{display:flex}
+.modal-hdr{display:flex;align-items:center;justify-content:space-between;padding:22px 40px;border-bottom:1px solid var(--border);flex-shrink:0;position:sticky;top:0;background:rgba(8,8,8,.98);z-index:1}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--cream)}
+.modal-x{background:none;border:1px solid var(--border2);color:var(--gold);width:42px;height:42px;font-size:1.3rem;cursor:pointer;transition:background .2s}
+.modal-x:hover{background:rgba(201,169,110,.1)}
+.modal-body{padding:28px 40px;flex:1}
+.modal-desc{font-size:.88rem;color:var(--text2);line-height:1.75;margin-bottom:28px;max-width:680px}
+.modal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.gi{overflow:hidden;border:1px solid var(--border);background:var(--dark)}
+.gi:hover{border-color:var(--border2)}
+.gi img{width:100%;height:200px;object-fit:contain;display:block;padding:16px;background:var(--dark);transition:transform .3s}
+.gi:hover img{transform:scale(1.03)}
+.modal-cta{padding:32px 40px;border-top:1px solid var(--border);text-align:center}
+.btn-gold{background:var(--gold);color:var(--black);padding:14px 32px;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background .2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-gold:hover{background:var(--gold2)}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:14px 26px;font-size:.8rem;font-weight:500;text-decoration:none;margin-left:12px}
+.btn-wa:hover{background:#1fb855}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background-image:url('images/foto01.jpg');background-size:cover;background-position:center}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,8,8,.82) 0%,rgba(8,8,8,.35) 55%,rgba(8,8,8,.65) 100%)}
+.hero-ct{position:relative;z-index:2;padding:0 56px 80px;max-width:780px}
+.hero-tag{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(201,169,110,.35);padding:7px 17px;margin-bottom:26px;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--sage);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:300;line-height:1.08;margin-bottom:22px;color:var(--cream)}
+.hero-title em{font-style:italic;color:var(--sage)}
+.hero-title strong{font-weight:600}
+.hero-sub{font-size:.95rem;font-weight:300;color:rgba(224,219,208,.6);line-height:1.8;max-width:520px;margin-bottom:40px}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap}
+.btn-outline{border:1px solid rgba(224,219,208,.25);color:var(--cream);padding:14px 28px;font-size:.78rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;display:inline-block}
+.btn-outline:hover{border-color:var(--gold)}
+
+/* SBAR */
+.sbar{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr)}
+.si{padding:20px 18px;display:flex;align-items:center;gap:11px;border-right:1px solid var(--border);text-decoration:none;color:var(--text);transition:background .2s}
+.si:last-child{border-right:none}
+.si:hover{background:rgba(201,169,110,.04)}
+.si-icon{font-size:1.2rem;flex-shrink:0}
+.si-label{font-size:.72rem;font-weight:500}
+.si-sub{font-size:.6rem;color:var(--text2);margin-top:2px}
+
+/* SECTIONS */
+.sec{padding:100px 56px}
+.tag{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
+h2.tit{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:300;line-height:1.1;margin-bottom:16px}
+h2.tit em{font-style:italic;color:var(--sage)}
+.body{font-size:.92rem;font-weight:300;color:rgba(224,219,208,.55);line-height:1.85;max-width:560px}
+
+/* VISION */
+.vision{background:var(--dark)}
+.v-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.v-pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:36px}
+.vp{background:rgba(255,255,255,.02);border:1px solid var(--border);padding:26px 22px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s}
+.vp::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height .4s}
+.vp:hover{border-color:var(--border2);transform:translateY(-3px)}
+.vp:hover::before{height:100%}
+.vp-icon{font-size:1.4rem;margin-bottom:10px}
+.vp h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;margin-bottom:6px}
+.vp p{font-size:.78rem;color:var(--text2);line-height:1.6}
+.v-quote{background:linear-gradient(145deg,var(--emerald),var(--emerald2));padding:52px 44px;position:relative;overflow:hidden}
+.v-quote::before{content:'"';position:absolute;top:-30px;left:10px;font-family:'Cormorant Garamond',serif;font-size:14rem;color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
+.v-quote blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.2vw,1.85rem);font-weight:300;font-style:italic;line-height:1.4;color:var(--cream);position:relative;z-index:1;margin-bottom:22px}
+.v-quote cite{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);font-style:normal}
+
+/* WINDOWS SECTION */
+.windows{background:var(--black);overflow:hidden}
+.win-split{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+.win-photo{position:relative;overflow:hidden}
+.win-photo img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease}
+.win-photo:hover img{transform:scale(1.05)}
+.win-photo-ov{position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--black) 100%)}
+.win-info{display:flex;flex-direction:column;justify-content:center;padding:64px 52px;background:var(--black);position:relative}
+.win-info::before{content:'REHAU';position:absolute;right:-20px;bottom:-30px;font-family:'Cormorant Garamond',serif;font-size:12rem;font-weight:600;color:rgba(255,255,255,.018);line-height:1;pointer-events:none;user-select:none}
+
+/* ROTATING REHAU PROFILE */
+.rehau-wrap{margin-bottom:40px;display:flex;justify-content:flex-start}
+.rehau-wrap model-viewer{
+  width:380px;height:380px;
+  --progress-bar-color:#c9a96e;
+  filter:drop-shadow(0 20px 50px rgba(0,0,0,.8)) drop-shadow(0 0 30px rgba(201,169,110,.12));
+}
+
+.win-chips{display:flex;gap:9px;margin-bottom:26px;flex-wrap:wrap}
+.wchip{background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.25);padding:5px 13px;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.w-types{display:flex;flex-direction:column;gap:2px;margin-top:28px}
+.wt{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(255,255,255,.02);border:1px solid var(--border);transition:all .2s;cursor:pointer;color:var(--text)}
+.wt:hover{background:rgba(201,169,110,.05);border-color:var(--border2);transform:translateX(4px)}
+.wt-name{font-size:.86rem;font-weight:500}
+.wt-tag{font-size:.63rem;color:var(--gold);letter-spacing:.07em;margin-top:2px}
+.wt-arr{color:var(--text2);transition:color .2s,transform .2s}
+.wt:hover .wt-arr{color:var(--gold);transform:translateX(4px)}
+
+/* BIO */
+.bio{background:var(--cream);color:var(--black)}
+.bio .tag{color:var(--emerald)}
+.bio h2.tit em{color:var(--emerald)}
+.bio .body{color:rgba(8,8,8,.55)}
+.bio-inner{display:grid;grid-template-columns:1fr 1fr;min-height:65vh}
+.bio-photo{background-image:url('images/foto02.jpg');background-size:cover;background-position:center;transition:transform 8s ease}
+.bio-photo:hover{transform:scale(1.03)}
+.bio-text{padding:70px 52px;display:flex;flex-direction:column;justify-content:center}
+.bio-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:30px}
+.bs{background:var(--black);color:var(--text);padding:22px 20px}
+.bs-n{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);line-height:1}
+.bs-l{font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);margin-top:4px}
+.bio-banner{background:var(--emerald);color:white;padding:30px 26px;margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.bio-banner h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;margin-bottom:4px}
+.bio-banner p{font-size:.78rem;color:rgba(255,255,255,.55);max-width:180px;line-height:1.6}
+.bb-btns{display:flex;flex-direction:column;gap:8px;flex-shrink:0}
+.bb1{background:var(--gold);color:var(--black);padding:10px 18px;font-size:.72rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;text-align:center;display:block;cursor:pointer;border:none;font-family:'DM Sans',sans-serif}
+.bb1:hover{background:var(--gold2)}
+.bb2{border:1px solid rgba(255,255,255,.3);color:white;padding:9px 18px;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;text-align:center;display:block}
+.bb2:hover{border-color:rgba(255,255,255,.7)}
+
+/* PACKAGES */
+.pkgs{background:var(--dark2);padding:100px 56px}
+.pkg-head{text-align:center;margin-bottom:52px}
+.pkg-head .body{margin:0 auto}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1000px;margin:0 auto}
+.pkg{background:rgba(12,12,12,.9);border:1px solid var(--border);padding:36px 28px;display:flex;flex-direction:column;transition:border-color .25s,transform .25s}
+.pkg:hover{border-color:var(--border2);transform:translateY(-5px)}
+.pkg.pop{border-color:rgba(201,169,110,.28);background:rgba(16,35,22,.9)}
+.pkg-tier{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);margin-bottom:7px}
+.pkg-ribbon{background:var(--gold);color:var(--black);font-size:.58rem;font-weight:600;padding:3px 12px;width:fit-content;margin-bottom:7px}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;margin-bottom:4px}
+.pkg-glass{font-size:.72rem;color:var(--gold);letter-spacing:.08em;margin-bottom:13px}
+.pkg-desc{font-size:.8rem;color:var(--text2);line-height:1.65;margin-bottom:14px}
+.pkg-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px;flex:1}
+.pkg-list li{display:flex;gap:10px;font-size:.8rem;color:rgba(224,219,208,.7)}
+.pkg-list li::before{content:'—';color:var(--gold);flex-shrink:0}
+.pkg-btns{display:flex;gap:8px;flex-direction:column}
+.pb1{background:var(--gold);color:var(--black);padding:12px;text-align:center;font-size:.73rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;display:block}
+.pb1:hover{background:var(--gold2)}
+.pb2{border:1px solid var(--border2);color:var(--gold);padding:11px;text-align:center;font-size:.73rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;display:block}
+.pb2:hover{background:rgba(201,169,110,.07)}
+
+/* CONTACT */
+.contact{background:var(--dark);padding:100px 56px;position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,169,110,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,110,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.contact-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.c-info h2{margin-bottom:16px}
+.c-info p{font-size:.9rem;color:var(--text2);line-height:1.8;margin-bottom:30px}
+.c-meta{display:flex;flex-direction:column;gap:13px}
+.cm{display:flex;align-items:center;gap:12px;font-size:.84rem;color:rgba(224,219,208,.65)}
+.cm-ic{width:36px;height:36px;background:rgba(201,169,110,.08);border:1px solid var(--border2);display:grid;place-items:center;font-size:.9rem;flex-shrink:0}
+.wa-contact{display:flex;align-items:center;gap:11px;background:#25D366;color:white;padding:13px 18px;margin-top:20px;text-decoration:none;font-size:.8rem;font-weight:500;width:fit-content}
+.wa-contact:hover{background:#1fb855}
+.cform{display:flex;flex-direction:column;gap:10px}
+.crow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fi{background:rgba(255,255,255,.035);border:1px solid rgba(224,219,208,.1);color:var(--text);padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:.85rem;width:100%;outline:none;transition:border-color .25s}
+.fi:focus{border-color:var(--gold)}
+.fi::placeholder{color:rgba(224,219,208,.25)}
+.fi option{background:var(--black)}
+textarea.fi{min-height:95px;resize:vertical}
+.f-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.fb1{background:var(--gold);color:var(--black);border:none;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.fb1:hover{background:var(--gold2)}
+.fb2{border:1px solid rgba(224,219,208,.18);color:var(--text);background:none;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.fb2:hover{border-color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--border);padding:60px 56px 28px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:44px}
+.fb-desc{font-size:.8rem;color:var(--text2);line-height:1.75;margin-top:12px;max-width:280px}
+.ft-tagline{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-family:'Cormorant Garamond',serif;font-size:.88rem;font-style:italic;color:var(--gold)}
+.fc h4{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fc a{display:block;color:var(--text2);font-size:.8rem;margin-bottom:8px;text-decoration:none;transition:color .2s}
+.fc a:hover{color:var(--text)}
+.fb{padding-top:20px;border-top:1px solid rgba(224,219,208,.05);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.68rem;color:rgba(224,219,208,.2)}
+
+/* ANIMATIONS */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.rv.vis{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:0 20px}.nav-links{display:none}
+  .hero-ct{padding:0 24px 56px}
+  .sec,.pkgs,.contact{padding:72px 24px}
+  .v-inner,.win-split,.bio-inner,.contact-inner{grid-template-columns:1fr;gap:40px}
+  .win-photo{height:260px}.bio-photo{height:260px}
+  .win-info{padding:48px 28px}.bio-text{padding:48px 28px}
+  .v-pillars{grid-template-columns:1fr 1fr}
+  .pkg-grid{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr;gap:32px}
+  .sbar{grid-template-columns:1fr 1fr}
+  .bio-stats{grid-template-columns:1fr 1fr}
+  .bio-banner{flex-direction:column}
+  .crow{grid-template-columns:1fr}
+  .modal-grid{grid-template-columns:1fr 1fr}
+  .modal-hdr,.modal-body,.modal-cta{padding:18px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- MODAL: Panoramische Schuifpui -->
+<div class="modal" id="m-pan">
+  <div class="modal-hdr">
+    <div class="modal-title" data-nl="Panoramische Schuifpui" data-en="Panoramic Sliding Door">Panoramische Schuifpui</div>
+    <button class="modal-x" onclick="closeM('m-pan')">✕</button>
+  </div>
+    <div class="modal-body">
+    <p class="modal-desc" data-nl="Maximaal licht, minimaal frame. REHAU schuifpuien bieden een naadloze verbinding tussen binnen en buiten. Beschikbaar in wit, antraciet (RAL 7016) en houtlook. Inclusief 2- of 3-dubbel glas." data-en="Maximum light, minimal frame. REHAU sliding doors offer a seamless connection between inside and outside. Available in white, anthracite (RAL 7016) and wood effect.">Maximaal licht, minimaal frame. REHAU schuifpuien bieden een naadloze verbinding tussen binnen en buiten. Beschikbaar in wit, antraciet (RAL 7016) en houtlook.</p>
+    <div class="modal-grid">
+<div class="gi"><img src="images/foto03.jpg" alt="Panoramische schuifpui antraciet"></div>
+<div class="gi"><img src="images/foto04.jpg" alt="Schuifpui profiel"></div>
+<div class="gi"><img src="images/foto05.jpg" alt="REHAU schuifdeur"></div>
+<div class="gi"><img src="images/foto06.jpg" alt="Panoramische pui woning"></div>
+<div class="gi"><img src="images/foto07.jpg" alt="Schuifpui terras"></div>
+<div class="gi"><img src="images/foto08.jpg" alt="Glijdende deur tuin"></div>
+<div class="gi"><img src="images/foto09.jpg" alt="Schuifpui zwart tuin"></div>
+<div class="gi"><img src="images/foto10.jpg" alt="Panoramisch raam"></div>
+<div class="gi"><img src="images/foto11.jpg" alt="REHAU schuifpui modern"></div>
+<div class="gi"><img src="images/foto12.jpg" alt="Schuifpui terras design"></div>
+<div class="gi"><img src="images/foto13.jpg" alt="REHAU slinova schuifpui"></div>
+
+    </div>
+  </div>
+  <div class="modal-cta">
+    <a href="#contact" class="btn-gold" onclick="closeM('m-pan')" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
+    <a href="https://wa.me/31612345678" class="btn-wa" target="_blank">💬 WhatsApp</a>
+  </div>
+</div>
+</div>
+
+<!-- MODAL: 3-Dubbel Glas -->
+<div class="modal" id="m-3glas">
+  <div class="modal-hdr">
+    <div class="modal-title" data-nl="3-Dubbel Glas HR+++" data-en="Triple Glazing HR+++">3-Dubbel Glas HR+++</div>
+    <button class="modal-x" onclick="closeM('m-3glas')">✕</button>
+  </div>
+  <div class="modal-body">
+    <p class="modal-desc" data-nl="Maximale isolatie — bijna geen warmteverlies. Het 3-dubbel glas van REHAU houdt warmte perfect binnen. U bespaart significant op gas en stroom. Passive House gecertificeerd. Energieklasse A+." data-en="Maximum insulation — almost no heat loss. REHAU triple glazing keeps warmth perfectly inside. You save significantly on gas and electricity. Passive House certified.">Maximale isolatie — bijna geen warmteverlies. REHAU 3-dubbel glas houdt warmte perfect binnen. U bespaart significant op gas en stroom. Passive House gecertificeerd.</p>
+    <div class="modal-grid"><div class="gi"><img src="images/foto14.jpg" alt="REHAU 3-dubbel profiel"></div>
+<div class="gi"><img src="images/foto15.jpg" alt="REHAU zwart 3-glas"></div>
+<div class="gi"><img src="images/foto16.jpg" alt="3-dubbel tekening"></div>
+<div class="gi"><img src="images/foto17.jpg" alt="HR+++ profiel"></div>
+<div class="gi"><img src="images/foto18.jpg" alt="REHAU gecertificeerd"></div>
+</div>
+  </div>
+  <div class="modal-cta">
+    <a href="#contact" class="btn-gold" onclick="closeM('m-3glas')" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
+    <a href="https://wa.me/31612345678" class="btn-wa" target="_blank">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- MODAL: Zwart & Antraciet -->
+<div class="modal" id="m-zwart">
+  <div class="modal-hdr">
+    <div class="modal-title" data-nl="Zwarte & Antraciet Kozijnen" data-en="Black & Anthracite Frames">Zwarte & Antraciet Kozijnen</div>
+    <button class="modal-x" onclick="closeM('m-zwart')">✕</button>
+  </div>
+  <div class="modal-body">
+    <p class="modal-desc" data-nl="Zwart en antraciet (RAL 7016) zijn dé topkleuren in Nederland. Strak, modern en tijdloos. REHAU zwarte kozijnen zijn verkrijgbaar in mat zwart en antraciet — de meest gevraagde kleur op de Nederlandse markt." data-en="Black and anthracite (RAL 7016) are the top colours in the Netherlands. Sleek, modern and timeless. The most requested colour in the Dutch market.">Zwart en antraciet (RAL 7016) zijn dé topkleuren in Nederland. REHAU zwarte kozijnen — de meest gevraagde kleur op de Nederlandse markt.</p>
+    <div class="modal-grid"><div class="gi"><img src="images/foto19.jpg" alt="REHAU antraciet RAL7016"></div>
+<div class="gi"><img src="images/foto20.jpg" alt="REHAU zwart profiel"></div>
+<div class="gi"><img src="images/foto21.jpg" alt="Zwarte schuifpui"></div>
+<div class="gi"><img src="images/foto22.jpg" alt="REHAU premium zwart"></div>
+<div class="gi"><img src="images/foto23.jpg" alt="Zwarte kozijnen tekening"></div>
+</div>
+  </div>
+  <div class="modal-cta">
+    <a href="#contact" class="btn-gold" onclick="closeM('m-zwart')" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
+    <a href="https://wa.me/31612345678" class="btn-wa" target="_blank">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- MODAL: HR++ -->
+<div class="modal" id="m-hr2">
+  <div class="modal-hdr">
+    <div class="modal-title" data-nl="2-Dubbel HR++ Glas" data-en="Double HR++ Glazing">2-Dubbel HR++ Glas</div>
+    <button class="modal-x" onclick="closeM('m-hr2')">✕</button>
+  </div>
+  <div class="modal-body">
+    <p class="modal-desc" data-nl="De populairste keuze in Nederland. HR++ glas geeft betere isolatie dan standaard 2-glas. Met warm-edge afstandhouder optie voor extra comfort. Demontage en montage inbegrepen." data-en="The most popular choice in the Netherlands. HR++ glass gives better insulation than standard double glazing. Removal and installation included.">De populairste keuze in Nederland. HR++ glas geeft betere isolatie dan standaard 2-glas. Demontage en montage inbegrepen.</p>
+    <div class="modal-grid"><div class="gi"><img src="images/foto24.jpg" alt="HR++ wit kozijn profiel"></div><div class="gi"><img src="images/foto25.jpg" alt="HR++ kozijn kleurvarianten"></div><div class="gi"><img src="images/foto26.jpg" alt="HR++ antraciet kozijn profiel"></div><div class="gi"><img src="images/foto27.jpg" alt="HR++ hout kozijn profiel"></div><div class="gi"><img src="images/foto28.jpg" alt="HR++ kozijn doorsnede wit"></div><div class="gi"><img src="images/foto29.jpg" alt="HR++ kozijn doorsnede detail"></div></div>
+  </div>
+  <div class="modal-cta">
+    <a href="#contact" class="btn-gold" onclick="closeM('m-hr2')" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
+    <a href="https://wa.me/31612345678" class="btn-wa" target="_blank">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- MODAL: Serres -->
+<div class="modal" id="m-gh">
+  <div class="modal-hdr">
+    <div class="modal-title" data-nl="Luxe Bio Serres & Tuinkassen" data-en="Luxury Bio Greenhouses">Luxe Bio Serres & Tuinkassen</div>
+    <button class="modal-x" onclick="closeM('m-gh')">✕</button>
+  </div>
+  <div class="modal-body">
+    <p class="modal-desc" data-nl="Verse tomaten in december. Eigen kruiden elke dag. Onze luxe serres zijn 365 dagen per jaar productief — zonder chemicaliën. Volledig op maat, premium afwerking, maximale isolatie." data-en="Fresh tomatoes in December. Your own herbs every day. Our luxury greenhouses are productive 365 days a year — without chemicals. Fully custom, premium finishing.">Verse tomaten in december. Eigen kruiden elke dag. Onze luxe serres zijn 365 dagen per jaar productief — zonder chemicaliën. Volledig op maat.</p>
+    <div class="modal-grid"><div class="gi"><img src="images/foto30.jpg" alt="Luxe serre 1"></div>
+<div class="gi"><img src="images/foto31.jpg" alt="Luxe serre 2"></div>
+<div class="gi"><img src="images/foto32.jpg" alt="Luxe serre 3"></div>
+<div class="gi"><img src="images/foto33.jpg" alt="Luxe serre 4"></div>
+<div class="gi"><img src="images/foto34.jpg" alt="Luxe serre 5"></div>
+<div class="gi"><img src="images/foto35.jpg" alt="Luxe serre 6"></div>
+<div class="gi"><img src="images/foto36.jpg" alt="Luxe serre 7"></div>
+<div class="gi"><img src="images/foto37.jpg" alt="Luxe serre 8"></div>
+<div class="gi"><img src="images/foto38.jpg" alt="Luxe serre 9"></div>
+<div class="gi"><img src="images/foto39.jpg" alt="Luxe serre 10"></div>
+</div>
+  </div>
+  <div class="modal-cta">
+    <a href="#contact" class="btn-gold" onclick="closeM('m-gh')" data-nl="Offerte aanvragen serre" data-en="Request greenhouse quote">Offerte aanvragen serre</a>
+    <a href="https://wa.me/31612345678" class="btn-wa" target="_blank">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">Energy<span>Dream</span></a>
+  <ul class="nav-links">
+    <li><a href="#vision" data-nl="Visie" data-en="Vision">Visie</a></li>
+    <li><a href="#windows" data-nl="Ramen" data-en="Windows">Ramen</a></li>
+    <li><a href="#bio" data-nl="Bio Serres" data-en="Bio Serres">Bio Serres</a></li>
+    <li><a href="#packages" data-nl="Pakketten" data-en="Packages">Pakketten</a></li>
+    <li><a href="#contact" data-nl="Contact" data-en="Contact">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="lang">
+      <button class="on" onclick="setLang('nl')">NL</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+    <a href="https://wa.me/31612345678" class="wa-btn" target="_blank">💬 WhatsApp</a>
+    <a href="#contact" class="cta-nav" data-nl="Offerte" data-en="Quote">Offerte</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-ct">
+    <div class="hero-tag" data-nl="REHAU Ramen · Bio Serres · Heel Nederland" data-en="REHAU Windows · Bio Greenhouses · All Netherlands">REHAU Ramen · Bio Serres · Heel Nederland</div>
+    <h1 class="hero-title">
+      <span data-nl="Warmte binnen.<br><em>Natuur dichtbij.</em><br><strong>Uw eigen bio tuin.</strong>" data-en="Warmth inside.<br><em>Nature close by.</em><br><strong>Your own bio garden.</strong>">Warmte binnen.<br><em>Natuur dichtbij.</em><br><strong>Uw eigen bio tuin.</strong></span>
+    </h1>
+    <p class="hero-sub" data-nl="REHAU kozijnen houden warmte binnen — u bespaart op energie. Onze luxe bio-serres geven u vers, chemievrij voedsel het hele jaar. Heel Nederland." data-en="REHAU frames keep warmth inside — you save on energy. Our luxury bio greenhouses give you fresh, chemical-free food all year. All Netherlands.">REHAU kozijnen houden warmte binnen — u bespaart op energie. Onze luxe bio-serres geven u vers, chemievrij voedsel het hele jaar. Heel Nederland.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold" data-nl="Gratis adviesgesprek" data-en="Free consultation">Gratis adviesgesprek</a>
+      <a href="https://wa.me/31612345678" class="btn-wa" target="_blank">💬 WhatsApp ons</a>
+      <a href="#windows" class="btn-outline" data-nl="Bekijk ramen" data-en="View windows">Bekijk ramen</a>
+    </div>
+  </div>
+</section>
+
+<!-- SBAR -->
+<div class="sbar">
+  <a href="#windows" class="si rv"><div class="si-icon">🪟</div><div><div class="si-label">REHAU Ramen</div><div class="si-sub">Luxury PVC · Panoramisch</div></div></a>
+  <a href="#bio" class="si rv rd1"><div class="si-icon">🌿</div><div><div class="si-label" data-nl="Bio Serres" data-en="Bio Greenhouses">Bio Serres</div><div class="si-sub" data-nl="365 dagen verse groenten" data-en="365 days fresh vegetables">365 dagen verse groenten</div></div></a>
+  <a href="#packages" class="si rv rd2"><div class="si-icon">🔥</div><div><div class="si-label" data-nl="Energiebesparing" data-en="Energy Saving">Energiebesparing</div><div class="si-sub" data-nl="Warmte binnen, rekening lager" data-en="Warmth inside, lower bills">Warmte binnen, rekening lager</div></div></a>
+  <a href="#contact" class="si rv rd3"><div class="si-icon">📍</div><div><div class="si-label" data-nl="Heel Nederland" data-en="All Netherlands">Heel Nederland</div><div class="si-sub" data-nl="Gratis adviesgesprek" data-en="Free consultation">Gratis adviesgesprek</div></div></a>
+</div>
+
+<!-- VISION -->
+<section class="sec vision" id="vision">
+  <div class="v-inner">
+    <div>
+      <div class="rv">
+        <span class="tag" data-nl="Waarom EnergyDream" data-en="Why EnergyDream">Waarom EnergyDream</span>
+        <h2 class="tit" data-nl="Comfortabel wonen.<br><em>Gezond leven.</em>" data-en="Comfortable living.<br><em>Healthy life.</em>">Comfortabel wonen.<br><em>Gezond leven.</em></h2>
+        <p class="body" data-nl="REHAU kozijnen houden uw huis warm en verlagen uw energierekening. Onze luxe bio-serres geven u het hele jaar vers, chemievrij voedsel. Eenvoudig. Waardevol." data-en="REHAU frames keep your home warm and lower your energy bills. Our luxury bio greenhouses give you fresh, chemical-free food all year. Simple. Valuable.">REHAU kozijnen houden uw huis warm en verlagen uw energierekening. Onze luxe bio-serres geven u het hele jaar vers, chemievrij voedsel.</p>
+      </div>
+      <div class="v-pillars rv">
+        <div class="vp"><div class="vp-icon">🔥</div><h3 data-nl="Warmte binnen" data-en="Warmth inside">Warmte binnen</h3><p data-nl="REHAU ramen isoleren perfect. Minder warmteverlies, lagere energierekening." data-en="REHAU windows insulate perfectly. Less heat loss, lower energy bill.">REHAU ramen isoleren perfect. Minder warmteverlies, lagere energierekening.</p></div>
+        <div class="vp"><div class="vp-icon">🌱</div><h3 data-nl="Bio & Gezond" data-en="Bio & Healthy">Bio & Gezond</h3><p data-nl="Uw eigen groenten, 365 dagen. Zonder chemicaliën." data-en="Your own vegetables, 365 days. Without chemicals.">Uw eigen groenten, 365 dagen. Zonder chemicaliën.</p></div>
+        <div class="vp"><div class="vp-icon">💰</div><h3 data-nl="Bespaar op kosten" data-en="Save on costs">Bespaar op kosten</h3><p data-nl="Minder gasrekening + minder supermarktkosten." data-en="Lower gas bill + less supermarket costs.">Minder gasrekening + minder supermarktkosten.</p></div>
+        <div class="vp"><div class="vp-icon">🏆</div><h3 data-nl="Premium kwaliteit" data-en="Premium quality">Premium kwaliteit</h3><p data-nl="REHAU gecertificeerd. 50+ jaar garantie." data-en="REHAU certified. 50+ years warranty.">REHAU gecertificeerd. 50+ jaar garantie.</p></div>
+      </div>
+    </div>
+    <div class="v-quote rv rd2">
+      <blockquote data-nl="&ldquo;Warme ramen, lagere rekening. Eigen groenten, gezonder leven.&rdquo;" data-en="&ldquo;Warm windows, lower bills. Own vegetables, healthier life.&rdquo;">&ldquo;Warme ramen, lagere rekening. Eigen groenten, gezonder leven.&rdquo;</blockquote>
+      <cite>EnergyDream — REHAU Ramen & Bio Serres · Heel Nederland</cite>
+    </div>
+  </div>
+</section>
+
+<!-- WINDOWS -->
+<section class="windows" id="windows">
+  <div class="win-split">
+    <div class="win-photo rv">
+      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&q=80" alt="REHAU panoramische ramen">
+      <div class="win-photo-ov"></div>
+    </div>
+    <div class="win-info rv rd2">
+      <!-- ROTATING REHAU PROFILE -->
+      <div class="rehau-wrap">
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+        <model-viewer src="images/window3d.glb" alt="REHAU Premium Profiel" auto-rotate camera-controls rotation-per-second="30deg" shadow-intensity="1" environment-image="neutral"></model-viewer>
+      </div>
+      <div class="win-chips">
+        <span class="wchip">A+ Energie</span>
+        <span class="wchip">50+ jaar</span>
+        <span class="wchip" data-nl="Officieel REHAU partner" data-en="Official REHAU partner">Officieel REHAU partner</span>
+      </div>
+      <span class="tag">REHAU Premium Windows</span>
+      <h2 class="tit" data-nl="Ramen die<br><em>warmte bewaren.</em>" data-en="Windows that<br><em>preserve warmth.</em>">Ramen die<br><em>warmte bewaren.</em></h2>
+      <p class="body" style="margin-bottom:26px" data-nl="REHAU kozijnen isoleren perfect. Warmte blijft binnen — u bespaart op gas en elektra. Panoramisch, zwart, antraciet of klassiek wit." data-en="REHAU frames insulate perfectly. Warmth stays inside — you save on gas and electricity. Panoramic, black, anthracite or classic white.">REHAU kozijnen isoleren perfect. Warmte blijft binnen — u bespaart op gas en elektra. Panoramisch, zwart, antraciet of klassiek wit.</p>
+      <div class="w-types">
+        <div class="wt" onclick="openM('m-pan')"><div><div class="wt-name" data-nl="Panoramische schuifpui" data-en="Panoramic sliding door">Panoramische schuifpui</div><div class="wt-tag" data-nl="Klik voor foto's en info →" data-en="Click for photos and info →">Klik voor foto's en info →</div></div><div class="wt-arr">→</div></div>
+        <div class="wt" onclick="openM('m-3glas')"><div><div class="wt-name" data-nl="3-dubbel glas HR+++" data-en="Triple glazing HR+++">3-dubbel glas HR+++</div><div class="wt-tag" data-nl="Klik voor foto's en info →" data-en="Click for photos and info →">Klik voor foto's en info →</div></div><div class="wt-arr">→</div></div>
+        <div class="wt" onclick="openM('m-zwart')"><div><div class="wt-name" data-nl="Zwarte & antraciet kozijnen" data-en="Black & anthracite frames">Zwarte & antraciet kozijnen</div><div class="wt-tag" data-nl="Top kleur in NL · Klik voor foto's →" data-en="Top colour in NL · Click for photos →">Top kleur in NL · Klik voor foto's →</div></div><div class="wt-arr">→</div></div>
+        <div class="wt" onclick="openM('m-hr2')"><div><div class="wt-name" data-nl="2-dubbel HR++ standaard" data-en="Double HR++ standard">2-dubbel HR++ standaard</div><div class="wt-tag" data-nl="Klik voor foto's en info →" data-en="Click for photos and info →">Klik voor foto's en info →</div></div><div class="wt-arr">→</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="bio" id="bio">
+  <div class="bio-inner">
+    <div class="bio-photo rv"></div>
+    <div class="bio-text rv rd2">
+      <span class="tag" data-nl="Bio Serres & Tuinkassen" data-en="Bio Greenhouses">Bio Serres & Tuinkassen</span>
+      <h2 class="tit" data-nl="Uw eigen<br><em>bio tuin.</em><br>Het hele jaar." data-en="Your own<br><em>bio garden.</em><br>All year long.">Uw eigen<br><em>bio tuin.</em><br>Het hele jaar.</h2>
+      <p class="body" data-nl="Verse tomaten in december. Eigen kruiden elke dag. Onze luxe serres maken het mogelijk — 365 dagen per jaar oogsten, zonder chemicaliën." data-en="Fresh tomatoes in December. Your own herbs every day. Our luxury greenhouses make it possible — harvesting 365 days a year, without chemicals.">Verse tomaten in december. Eigen kruiden elke dag. 365 dagen per jaar oogsten, zonder chemicaliën.</p>
+      <div class="bio-stats">
+        <div class="bs"><div class="bs-n">365</div><div class="bs-l" data-nl="Dagen per jaar" data-en="Days per year">Dagen per jaar</div></div>
+        <div class="bs"><div class="bs-n">0%</div><div class="bs-l" data-nl="Chemicaliën" data-en="Chemicals">Chemicaliën</div></div>
+        <div class="bs"><div class="bs-n">100%</div><div class="bs-l" data-nl="Op maat" data-en="Custom">Op maat</div></div>
+        <div class="bs"><div class="bs-n">NL</div><div class="bs-l" data-nl="Heel Nederland" data-en="All NL">Heel Nederland</div></div>
+      </div>
+      <div class="bio-banner">
+        <div>
+          <h3 data-nl="Luxe Bio Serre" data-en="Luxury Bio Greenhouse">Luxe Bio Serre</h3>
+          <p data-nl="Bekijk alle modellen. Volledig op maat." data-en="View all models. Fully custom.">Bekijk alle modellen. Volledig op maat.</p>
+        </div>
+        <div class="bb-btns">
+          <button class="bb1" onclick="openM('m-gh')" data-nl="Bekijk alle serres →" data-en="View all greenhouses →">Bekijk alle serres →</button>
+          <a href="#contact" class="bb2" data-nl="Premium offerte" data-en="Premium quote">Premium offerte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="pkgs" id="packages">
+  <div class="pkg-head rv">
+    <span class="tag" data-nl="Pakketten & Prijzen" data-en="Packages & Pricing">Pakketten & Prijzen</span>
+    <h2 class="tit" data-nl="Kies uw <em>pakket.</em>" data-en="Choose your <em>package.</em>">Kies uw <em>pakket.</em></h2>
+    <p class="body" data-nl="Elk pakket inclusief demontage van oude kozijnen en montage van nieuwe REHAU kozijnen. Door heel Nederland." data-en="Every package includes removal of old frames and installation of new REHAU frames. Throughout the Netherlands.">Elk pakket inclusief demontage en montage. Door heel Nederland.</p>
+  </div>
+  <div class="pkg-grid">
+    <div class="pkg rv rd1">
+      <div class="pkg-tier">ESSENTIAL</div>
+      <div class="pkg-name" data-nl="2-dubbel glas" data-en="Double glazing">2-dubbel glas</div>
+      <div class="pkg-glass">Standard HR</div>
+      <p class="pkg-desc" data-nl="Betaalbare keuze met goede basis-isolatie." data-en="Affordable choice with good basic insulation.">Betaalbare keuze met goede basis-isolatie.</p>
+      <ul class="pkg-list">
+        <li data-nl="REHAU PVC kozijnen + 2-glas" data-en="REHAU PVC frames + double glazing">REHAU PVC kozijnen + 2-glas</li>
+        <li data-nl="Demontage + montage inbegrepen" data-en="Removal + installation included">Demontage + montage inbegrepen</li>
+        <li data-nl="Professionele afwerking" data-en="Professional finishing">Professionele afwerking</li>
+      </ul>
+      <div class="pkg-btns">
+        <a href="#contact" class="pb1" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
+        <a href="package-basic.html" class="pb2" data-nl="Details bekijken →" data-en="View details →">Details bekijken →</a>
+      </div>
+    </div>
+    <div class="pkg pop rv rd2">
+      <div class="pkg-tier">COMFORT</div>
+      <div class="pkg-ribbon" data-nl="Populairst" data-en="Most popular">Populairst</div>
+      <div class="pkg-name">HR++</div>
+      <div class="pkg-glass">HR++ · 2-dubbel glas</div>
+      <p class="pkg-desc" data-nl="Betere isolatie, meer comfort, lager energieverbruik." data-en="Better insulation, more comfort, lower energy use.">Betere isolatie, meer comfort, lager energieverbruik.</p>
+      <ul class="pkg-list">
+        <li data-nl="REHAU HR++ kozijnen + glas" data-en="REHAU HR++ frames + glass">REHAU HR++ kozijnen + glas</li>
+        <li data-nl="Warm-edge afstandhouder optie" data-en="Warm-edge spacer option">Warm-edge afstandhouder optie</li>
+        <li data-nl="Significant lager energieverbruik" data-en="Significantly lower energy use">Significant lager energieverbruik</li>
+      </ul>
+      <div class="pkg-btns">
+        <a href="#contact" class="pb1" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
+        <a href="package-comfort.html" class="pb2" data-nl="Details bekijken →" data-en="View details →">Details bekijken →</a>
+      </div>
+    </div>
+    <div class="pkg rv rd3">
+      <div class="pkg-tier">LUXURY</div>
+      <div class="pkg-name" data-nl="3-dubbel glas" data-en="Triple glazing">3-dubbel glas</div>
+      <div class="pkg-glass">HR+++ · Passive House</div>
+      <p class="pkg-desc" data-nl="Maximale isolatie. Luxury uitstraling. Passive House." data-en="Maximum insulation. Luxury look. Passive House.">Maximale isolatie. Luxury uitstraling. Passive House.</p>
+      <ul class="pkg-list">
+        <li data-nl="Breed REHAU profiel + HR+++ 3-glas" data-en="Wide REHAU profile + triple glazing">Breed REHAU profiel + HR+++ 3-glas</li>
+        <li data-nl="Zwart / antraciet optie" data-en="Black / anthracite option">Zwart / antraciet optie</li>
+        <li data-nl="Passive House gecertificeerd" data-en="Passive House certified">Passive House gecertificeerd</li>
+      </ul>
+      <div class="pkg-btns">
+        <a href="#contact" class="pb1" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
+        <a href="package-premium.html" class="pb2" data-nl="Details bekijken →" data-en="View details →">Details bekijken →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="c-info rv">
+      <span class="tag" data-nl="Start uw project" data-en="Start your project">Start uw project</span>
+      <h2 class="tit" data-nl="Laten we samen<br><em>aan de slag.</em>" data-en="Let's get<br><em>started together.</em>">Laten we samen<br><em>aan de slag.</em></h2>
+      <p data-nl="Van REHAU ramen tot een luxe bio-serre. Gratis adviesgesprek, binnen 24 uur reactie." data-en="From REHAU windows to a luxury bio greenhouse. Free consultation, response within 24 hours.">Van REHAU ramen tot een luxe bio-serre. Gratis adviesgesprek, binnen 24 uur reactie.</p>
+      <div class="c-meta">
+        <div class="cm"><div class="cm-ic">📍</div><span data-nl="Actief door heel Nederland" data-en="Active throughout the Netherlands">Actief door heel Nederland</span></div>
+        <div class="cm"><div class="cm-ic">⏱️</div><span data-nl="Reactie binnen 24 uur" data-en="Response within 24 hours">Reactie binnen 24 uur</span></div>
+        <div class="cm"><div class="cm-ic">✅</div><span data-nl="Gratis en vrijblijvend" data-en="Free and no obligation">Gratis en vrijblijvend</span></div>
+        <div class="cm"><div class="cm-ic">🏆</div><span data-nl="Officieel REHAU partner" data-en="Official REHAU partner">Officieel REHAU partner</span></div>
+      </div>
+      <a href="https://wa.me/31612345678" class="wa-contact" target="_blank">💬 <span data-nl="Direct WhatsApp sturen" data-en="Send WhatsApp directly">Direct WhatsApp sturen</span></a>
+    </div>
+    <div class="cform rv rd2">
+      <div class="crow">
+        <input class="fi" type="text" placeholder="Naam" data-nl-ph="Naam" data-en-ph="Name">
+        <input class="fi" type="tel" placeholder="Telefoon" data-nl-ph="Telefoon" data-en-ph="Phone">
+      </div>
+      <input class="fi" type="email" placeholder="E-mailadres">
+      <select class="fi">
+        <option data-nl="Wat heeft u nodig?" data-en="What do you need?">Wat heeft u nodig?</option>
+        <option data-nl="REHAU Ramen & Kozijnen" data-en="REHAU Windows & Frames">REHAU Ramen & Kozijnen</option>
+        <option data-nl="Panoramische schuifpui" data-en="Panoramic sliding door">Panoramische schuifpui</option>
+        <option data-nl="Zwarte / antraciet kozijnen" data-en="Black / anthracite frames">Zwarte / antraciet kozijnen</option>
+        <option data-nl="Bio Serre / Tuinkas" data-en="Bio Greenhouse">Bio Serre / Tuinkas</option>
+        <option data-nl="Combinatie ramen + serre" data-en="Combination windows + greenhouse">Combinatie ramen + serre</option>
+      </select>
+      <textarea class="fi" placeholder="Vertel over uw project..." data-nl-ph="Vertel over uw project..." data-en-ph="Tell us about your project..."></textarea>
+      <div class="f-btns">
+        <button class="fb1" id="sendBtn" data-nl="Versturen →" data-en="Send →">Versturen →</button>
+        <a href="https://wa.me/31612345678" class="fb2" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div>
+      <a href="#" class="logo">Energy<span>Dream</span></a>
+      <p class="fb-desc" data-nl="REHAU kozijnen voor maximale warmte. Luxe bio-serres voor gezond leven. Officieel REHAU partner. Heel Nederland." data-en="REHAU frames for maximum warmth. Luxury bio greenhouses for healthy living. Official REHAU partner. All Netherlands.">REHAU kozijnen voor maximale warmte. Luxe bio-serres voor gezond leven. Officieel REHAU partner. Heel Nederland.</p>
+      <div class="ft-tagline">"Warmte binnen. Natuur dichtbij. Uw eigen bio tuin."</div>
+    </div>
+    <div class="fc">
+      <h4 data-nl="Diensten" data-en="Services">Diensten</h4>
+      <a href="#windows" onclick="openM('m-pan')" data-nl="Panoramische schuifpui" data-en="Panoramic sliding">Panoramische schuifpui</a>
+      <a href="#windows" onclick="openM('m-zwart')" data-nl="Zwarte kozijnen" data-en="Black frames">Zwarte kozijnen</a>
+      <a href="#windows" onclick="openM('m-3glas')">3-dubbel glas</a>
+      <a href="#bio" onclick="openM('m-gh')" data-nl="Bio Serres" data-en="Bio Greenhouses">Bio Serres</a>
+    </div>
+    <div class="fc">
+      <h4 data-nl="Pakketten" data-en="Packages">Pakketten</h4>
+      <a href="package-basic.html">Essential — 2-glas</a>
+      <a href="package-comfort.html">Comfort — HR++</a>
+      <a href="package-premium.html">Luxury — 3-glas</a>
+      <a href="#bio" onclick="openM('m-gh')" data-nl="Luxe serre" data-en="Luxury greenhouse">Luxe serre</a>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <a href="mailto:info@energydream.nl">info@energydream.nl</a>
+      <a href="https://wa.me/31612345678" target="_blank">💬 WhatsApp</a>
+      <a href="#contact" data-nl="Offerte aanvragen" data-en="Request quote">Offerte aanvragen</a>
+    </div>
+  </div>
+  <div class="fb">
+    <span>© 2025 EnergyDream.nl</span>
+    <span data-nl="Officieel REHAU Partner · Bio Serres · Heel Nederland" data-en="Official REHAU Partner · Bio Greenhouses · All Netherlands">Officieel REHAU Partner · Bio Serres · Heel Nederland</span>
+  </div>
+</footer>
+
+<script>
+let lang='nl';
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('.lang button').forEach((b,i)=>b.classList.toggle('on',i===(l==='nl'?0:1)));
+  document.querySelectorAll('[data-nl]').forEach(el=>{const t=el.getAttribute('data-'+l);if(t)el.innerHTML=t});
+  document.querySelectorAll('[data-nl-ph]').forEach(el=>{el.placeholder=el.getAttribute('data-'+l+'-ph')||''});
+  document.querySelectorAll('option[data-nl]').forEach(el=>{const t=el.getAttribute('data-'+l);if(t)el.textContent=t});
+}
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeM(m.id)}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>closeM(m.id));});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',window.scrollY>80));
+document.getElementById('sendBtn').addEventListener('click',function(){
+  const orig=this.textContent;
+  this.textContent=lang==='nl'?'Verzonden ✓':'Sent ✓';
+  this.style.background='#3d7a52';
+  setTimeout(()=>{this.style.background='';this.textContent=orig},3000);
+});
+</script>
+</body>
+</html>
