@@ -1,4 +1,4 @@
-r<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
@@ -104,8 +104,19 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
 .fc a{display:block;color:var(--text2);font-size:.8rem;margin-bottom:8px;text-decoration:none;transition:color .2s}
 .fc a:hover{color:var(--text)}
 .fb{padding-top:20px;border-top:1px solid rgba(224,219,208,.05);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.68rem;color:rgba(224,219,208,.2)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.burger span{display:block;width:24px;height:2px;background:var(--cream);transition:all .3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-mobile{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(8,8,8,.98);border-bottom:1px solid var(--border);padding:20px 24px;flex-direction:column;z-index:998}
+.nav-mobile.open{display:flex}
+.nav-mobile a{color:#b0aca4;text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.nav-mobile a:hover,.nav-mobile a.active{color:var(--gold)}
+.nav-mobile .wa-btn{margin-top:12px;justify-content:center;border-bottom:none}
+.nav-mobile .cta-nav{margin-top:8px;text-align:center;border-bottom:none}
 @media(max-width:900px){
-  nav{padding:0 20px}.nav-links{display:none}
+  nav{padding:0 20px}.nav-links{display:none}.burger{display:flex}
   .hero-ct{padding:0 20px 50px}
   .sec{padding:60px 20px}
   .fam-inner,.vans-inner{grid-template-columns:1fr;gap:40px}
@@ -135,22 +146,33 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
     </div>
     <a href="https://wa.me/31612345678" class="wa-btn" target="_blank">💬 WhatsApp</a>
     <a href="index.html#contact" class="cta-nav">Offerte</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html#vision">Visie</a>
+  <a href="index.html#windows">Ramen</a>
+  <a href="index.html#bio">Bio Serres</a>
+  <a href="index.html#packages">Pakketten</a>
+  <a href="why-lux.html" class="active">Over ons</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="https://wa.me/31612345678" class="wa-btn" target="_blank">💬 WhatsApp</a>
+  <a href="index.html#contact" class="cta-nav">Offerte aanvragen</a>
+</div>
 
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-ov"></div>
   <div class="hero-ct">
     <div class="hero-tag">Over EnergyDream</div>
-    <h1 class="hero-title">Familiebedrijf met<br><em>hart voor vakmanschap</em></h1>
-    <p class="hero-sub">Al meer dan 20 jaar installeren wij REHAU kozijnen en luxe bio-serres door heel Nederland — met eerlijkheid, precisie en persoonlijke aandacht voor elke klant.</p>
+    <h1 class="hero-title">Niet het grootst.<br><em>Wel het meest betrokken.</em></h1>
+    <p class="hero-sub">Wij zijn een familiebedrijf met 17 jaar vakmanschap in REHAU kozijnen en luxe bio-serres. Geen groot bedrijf met nummers — maar mensen die uw woning behandelen alsof het de hunne is.</p>
   </div>
 </section>
 
 <div class="sbar">
-  <div class="si"><div><div class="si-num">20+</div><div class="si-label">Jaar ervaring</div></div></div>
-  <div class="si"><div><div class="si-num">500+</div><div class="si-label">Tevreden klanten</div></div></div>
+  <div class="si"><div><div class="si-num">17+</div><div class="si-label">Jaar ervaring</div></div></div>
+  <div class="si"><div><div class="si-num">358</div><div class="si-label">Tevreden klanten</div></div></div>
   <div class="si"><div><div class="si-num">100%</div><div class="si-label">Heel Nederland</div></div></div>
   <div class="si"><div><div class="si-num" style="font-size:1.1rem;padding-top:8px;">REHAU</div><div class="si-label">Officieel partner</div></div></div>
 </div>
@@ -167,9 +189,9 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
     <div class="fam-text rd2">
       <span class="tag">Familiebedrijf</span>
       <h2 class="tit">Wij geloven in<br><em>eerlijk vakmanschap</em></h2>
-      <p class="body">EnergyDream is opgericht door ons als koppel — met één overtuiging: <span style="color:var(--cream)">elke klant verdient dezelfde aandacht die wij zelf zouden willen.</span></p>
-      <p class="body">We zijn niet het grootste bedrijf van Nederland — maar wel het meest betrokken. Van het eerste gesprek tot het moment dat de laatste kozijn op zijn plek zit, zijn wij persoonlijk aanwezig en verantwoordelijk voor het resultaat.</p>
-      <p class="body">Na meer dan 20 jaar installaties weten we: een goed kozijn is geen luxe — het is comfort, warmte en rust in uw huis. En een bio-serre is de toekomst van gezond en duurzaam leven.</p>
+      <p class="body">EnergyDream begon als een idee tussen twee mensen met één gemeenschappelijke overtuiging: <span style="color:var(--cream)">als je iets doet, doe het dan goed. Niet voor de snelle winst — maar voor een tevreden klant die je naam doorgeeft aan zijn buren.</span></p>
+      <p class="body">17 jaar later staan we nog steeds zelf op de ladder. We kennen onze klanten bij naam, we onthouden welk kozijn er vorig jaar zat en we komen terug als er iets niet klopt. Dat is geen marketing — dat is gewoon hoe wij werken.</p>
+      <p class="body">Van REHAU kozijnen die uw huis écht warm houden tot luxe bio-serres waar uw eigen tomaten groeien in december — wij bouwen aan iets wat blijft. Met uw huis als ons visitekaartje.</p>
       <div class="vals">
         <div class="val">
           <div class="val-ic">🤝</div>
@@ -201,7 +223,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
         </div>
       </div>
       <div class="v-quote rd3">
-        <blockquote>"Wij behandelen uw woning zoals die van onszelf — met zorg, precisie en oprecht respect voor uw vertrouwen."</blockquote>
+        <blockquote>"Uw woning is ons visitekaartje. Daar gaan we zuinig mee om — met elk kozijn, elke serre, elke schroef op zijn plek."</blockquote>
         <cite>— De oprichters van EnergyDream</cite>
       </div>
     </div>
@@ -270,7 +292,72 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
   </div>
 </section>
 
-<section class="cta-sec">
+<section class="sec" style="background:var(--dark2)">
+  <div class="container" style="max-width:1100px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start" class="rv">
+      <div class="rd1">
+        <span class="tag">Contact</span>
+        <h2 class="tit">Neem direct<br><em>contact op.</em></h2>
+        <p class="body">Heeft u een vraag over kozijnen, een bio-serre of wilt u gewoon weten wat wij voor uw woning kunnen betekenen? Bel, mail of app ons — wij reageren altijd binnen 24 uur.</p>
+        <p class="body" style="margin-top:12px">Werkdagen bereikbaar van <span style="color:var(--cream)">07:00 tot 18:00</span>. Buiten kantoortijden kunt u altijd een WhatsApp sturen.</p>
+      </div>
+      <div class="rd2">
+        <div style="display:flex;flex-direction:column;gap:3px">
+
+          <a href="tel:+31657825303" style="display:flex;align-items:center;gap:16px;padding:20px;background:rgba(255,255,255,.02);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:border-color .2s" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
+            <div style="width:44px;height:44px;background:rgba(201,169,110,.08);border:1px solid var(--border2);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0">📞</div>
+            <div>
+              <div style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">Telefoon</div>
+              <div style="font-size:1.05rem;color:var(--cream);font-weight:500">+31 6 57 82 53 03</div>
+              <div style="font-size:.75rem;color:var(--text2);margin-top:2px">Ma–Za · 07:00–18:00</div>
+            </div>
+          </a>
+
+          <a href="https://wa.me/31657825303" target="_blank" style="display:flex;align-items:center;gap:16px;padding:20px;background:rgba(37,211,102,.04);border:1px solid rgba(37,211,102,.15);text-decoration:none;color:var(--text);transition:border-color .2s" onmouseover="this.style.borderColor='rgba(37,211,102,.4)'" onmouseout="this.style.borderColor='rgba(37,211,102,.15)'">
+            <div style="width:44px;height:44px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);display:grid;place-items:center;flex-shrink:0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L.057 23.082a1 1 0 001.224 1.224l5.224-1.478A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.523-5.188-1.435l-.372-.22-3.853 1.09 1.09-3.853-.22-.372A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#25D366;margin-bottom:4px">WhatsApp</div>
+              <div style="font-size:1.05rem;color:var(--cream);font-weight:500">+31 6 57 82 53 03</div>
+              <div style="font-size:.75rem;color:var(--text2);margin-top:2px">Stuur een bericht — snel antwoord</div>
+            </div>
+          </a>
+
+          <a href="mailto:info@energydream.nl" style="display:flex;align-items:center;gap:16px;padding:20px;background:rgba(255,255,255,.02);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:border-color .2s" onmouseover="this.style.borderColor='var(--border2)'" onmouseout="this.style.borderColor='var(--border)'">
+            <div style="width:44px;height:44px;background:rgba(201,169,110,.08);border:1px solid var(--border2);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0">✉️</div>
+            <div>
+              <div style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">E-mail</div>
+              <div style="font-size:1.05rem;color:var(--cream);font-weight:500">info@energydream.nl</div>
+              <div style="font-size:.75rem;color:var(--text2);margin-top:2px">Reactie binnen 24 uur</div>
+            </div>
+          </a>
+
+          <div style="display:flex;align-items:center;gap:16px;padding:20px;background:rgba(255,255,255,.02);border:1px solid var(--border)">
+            <div style="width:44px;height:44px;background:rgba(201,169,110,.08);border:1px solid var(--border2);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0">📍</div>
+            <div>
+              <div style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">Werkgebied</div>
+              <div style="font-size:1.05rem;color:var(--cream);font-weight:500">Spijkenisse · Rotterdam</div>
+              <div style="font-size:.75rem;color:var(--text2);margin-top:2px">Actief door heel Nederland</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:16px;padding:20px;background:rgba(255,255,255,.02);border:1px solid var(--border)">
+            <div style="width:44px;height:44px;background:rgba(201,169,110,.08);border:1px solid var(--border2);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0">🕐</div>
+            <div>
+              <div style="font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">Bereikbaar</div>
+              <div style="font-size:1.05rem;color:var(--cream);font-weight:500">07:00 — 18:00</div>
+              <div style="font-size:.75rem;color:var(--text2);margin-top:2px">Maandag t/m Zaterdag</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   <span class="tag" style="color:rgba(240,236,227,.45)">Aan de slag</span>
   <h2 class="tit" style="color:var(--cream)">Klaar om samen<br><em style="color:rgba(240,236,227,.5)">te beginnen?</em></h2>
   <p class="body" style="margin:0 auto;color:rgba(255,255,255,.45)">Gratis adviesgesprek, vrijblijvende offerte. Binnen 24 uur reactie. Heel Nederland.</p>
@@ -304,7 +391,8 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
     <div class="fc">
       <h4>Contact</h4>
       <a href="mailto:info@energydream.nl">info@energydream.nl</a>
-      <a href="https://wa.me/31612345678" target="_blank">💬 WhatsApp</a>
+      <a href="tel:+31657825303">+31 6 57 82 53 03</a>
+      <a href="https://wa.me/31657825303" target="_blank">💬 WhatsApp</a>
       <a href="index.html#contact">Offerte aanvragen</a>
     </div>
   </div>
@@ -318,6 +406,10 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',window.scrollY>80));
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
 </script>
 </body>
 </html>
