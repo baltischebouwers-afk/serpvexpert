@@ -1,4 +1,4 @@
-r<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
@@ -216,9 +216,21 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
 .rv.vis{opacity:1;transform:none}
 .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
 
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.burger span{display:block;width:24px;height:2px;background:var(--cream);transition:all .3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-mobile{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(8,8,8,.98);border-bottom:1px solid var(--border);padding:20px 24px;flex-direction:column;z-index:998}
+.nav-mobile.open{display:flex}
+.nav-mobile a{color:#b0aca4;text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.nav-mobile a:hover,.nav-mobile a.active{color:var(--gold)}
+.nav-mobile .wa-btn{margin-top:12px;justify-content:center;border-bottom:none;border-radius:0}
+.nav-mobile .cta-nav{margin-top:8px;text-align:center;border-bottom:none}
+
 /* MOBILE */
 @media(max-width:900px){
-  nav{padding:0 20px}.nav-links{display:none}
+  nav{padding:0 20px}.nav-links{display:none}.burger{display:flex}
   .hero-ct{padding:0 24px 56px}
   .sec,.pkgs,.contact{padding:72px 24px}
   .v-inner,.win-split,.bio-inner,.contact-inner{grid-template-columns:1fr;gap:40px}
@@ -370,8 +382,19 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
     </div>
     <a href="https://wa.me/31612345678" class="wa-btn" target="_blank">💬 WhatsApp</a>
     <a href="#contact" class="cta-nav" data-nl="Offerte" data-en="Quote">Offerte</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="#vision" onclick="toggleMenu()">Visie</a>
+  <a href="#windows" onclick="toggleMenu()">Ramen</a>
+  <a href="#bio" onclick="toggleMenu()">Bio Serres</a>
+  <a href="#packages" onclick="toggleMenu()">Pakketten</a>
+  <a href="why-lux.html">Over ons</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="https://wa.me/31612345678" class="wa-btn" target="_blank">💬 WhatsApp</a>
+  <a href="#contact" class="cta-nav" onclick="toggleMenu()">Offerte aanvragen</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -627,6 +650,10 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelect
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',window.scrollY>80));
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
 document.getElementById('sendBtn').addEventListener('click',function(){
   const orig=this.textContent;
   this.textContent=lang==='nl'?'Verzonden ✓':'Sent ✓';
