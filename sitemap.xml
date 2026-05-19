@@ -1,58 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://energydream.nl/</loc>
+    <loc>https://www.energydream.nl/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://energydream.nl/lux-serre.html</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/package-basic.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/package-comfort.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/package-premium.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/why-lux.html</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/why-montage.html</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/why-prijsopties.html</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/projects-kozijnen.html</loc>
-    <priority>0.6</priority>
+    <loc>https://www.energydream.nl/why-lux.html</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/projects-deuren.html</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://energydream.nl/projects-ramen-hrpp.html</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
