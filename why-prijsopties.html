@@ -28,6 +28,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:80px;display:flex;ali
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#b0aca4;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
+.nav-links .dropdown{position:relative}
+.nav-links .dropdown>a::after{content:" ▾";font-size:.6em;vertical-align:middle;opacity:.6}
+.nav-links .drop-menu{display:none;position:absolute;top:100%;left:0;background:rgba(8,8,8,.98);border:1px solid var(--border);min-width:180px;z-index:1000;padding:8px 0}
+.nav-links .dropdown:hover .drop-menu{display:block}
+.nav-links .drop-menu a{display:block;padding:10px 20px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#b0aca4;text-decoration:none;transition:color .2s;border-bottom:none}
+.nav-links .drop-menu a:hover{color:var(--gold);background:rgba(201,169,110,.05)}
 .nav-r{display:flex;align-items:center;gap:12px}
 .wa-btn{display:flex;align-items:center;gap:7px;background:#25D366;color:white;padding:9px 16px;font-size:.74rem;font-weight:500;text-decoration:none}
 .wa-btn:hover{background:#1fb855}
@@ -160,7 +166,13 @@ footer a:hover{text-decoration:underline}
     <li><a href="index.html#bio">Bio Serres</a></li>
     <li><a href="index.html#packages">Pakketten</a></li>
     <li><a href="projects.html">Projecten</a></li>
-    <li><a href="why-lux.html">Over ons</a></li>
+    <li class="dropdown"><a href="why-lux.html">Over ons</a>
+      <div class="drop-menu">
+        <a href="why-montage.html">Onze werkwijze</a>
+        <a href="why-prijsopties.html">Prijsopties</a>
+      </div>
+    </li>  <a href="why-montage.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Onze werkwijze</a>
+  <a href="why-prijsopties.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Prijsopties</a><div class="drop-menu"><a href="why-montage.html">Onze werkwijze</a><a href="why-prijsopties.html">Prijsopties</a></div></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
   <div class="nav-r">
@@ -176,7 +188,9 @@ footer a:hover{text-decoration:underline}
   <a href="index.html#bio" onclick="toggleMenu()">Bio Serres</a>
   <a href="index.html#packages" onclick="toggleMenu()">Pakketten</a>
   <a href="projects.html" onclick="toggleMenu()">Projecten</a>
-  <a href="why-lux.html">Over ons</a>
+  <a href="why-lux.html" onclick="toggleMenu()">Over ons</a>
+  <a href="why-montage.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Onze werkwijze</a>
+  <a href="why-prijsopties.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Prijsopties</a>
   <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
   <a href="https://wa.me/31657825303" class="wa-btn" target="_blank">💬 WhatsApp</a>
   <a href="index.html#contact" class="cta-nav" onclick="toggleMenu()">Offerte aanvragen</a>
@@ -184,7 +198,8 @@ footer a:hover{text-decoration:underline}
 
 <!-- HERO -->
 <section class="page-hero">
-  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="why-lux.html">Over ons</a> / Prijsopties</div>
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="why-lux.html">Over ons</a> / Prijsopties</div>  <a href="why-montage.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Onze werkwijze</a>
+  <a href="why-prijsopties.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Prijsopties</a> / Prijsopties</div>
   <span class="page-tag">Transparante prijzen · Geen verborgen kosten</span>
   <h1 class="page-title">Wat bepaalt<br><em>de prijs?</em></h1>
   <p class="page-sub">Elk project is uniek — en de prijs ook. We leggen u eerlijk uit welke factoren de prijs bepalen, zodat u weet waar u op let bij het kiezen van nieuwe kozijnen.</p>
@@ -374,7 +389,9 @@ footer a:hover{text-decoration:underline}
 
 <footer>
   <span>© 2026 EnergyDream.nl — KVK: 69632022 · Spijkenisse · Officieel REHAU Partner</span>
-  <span><a href="index.html">Home</a> · <a href="why-lux.html">Over ons</a> · <a href="why-montage.html">Montage</a> · <a href="projects.html">Projecten</a></span>
+  <span><a href="index.html">Home</a> · <a href="why-lux.html">Over ons</a>
+  <a href="why-montage.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Onze werkwijze</a>
+  <a href="why-prijsopties.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Prijsopties</a> · <a href="why-montage.html">Montage</a> · <a href="projects.html">Projecten</a></span>
 </footer>
 
 <script>
