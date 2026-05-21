@@ -196,8 +196,10 @@ h2.tit em{font-style:italic;color:var(--sage)}
 .bb1:hover{background:var(--gold2)}
 .bb2{border:1px solid rgba(255,255,255,.3);color:white;padding:9px 18px;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;text-align:center;display:block}
 .bb2:hover{border-color:rgba(255,255,255,.7)}
-.bio-logo-wrap{margin-bottom:28px}
-.bio-logo-img{width:100%;max-width:340px;height:auto;display:block}
+.bio-top-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:flex-start;margin-bottom:28px}
+.bio-top-left{display:flex;flex-direction:column}
+.bio-logo-wrap{display:flex;align-items:flex-start;justify-content:flex-end}
+.bio-logo-img{width:100%;max-width:320px;height:auto;display:block}
 
 /* PACKAGES */
 .pkgs{background:var(--dark2);padding:100px 56px}
@@ -622,12 +624,16 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
   <div class="bio-inner">
     <div class="bio-photo rv"></div>
     <div class="bio-text rv rd2">
-      <div class="bio-logo-wrap">
-        <img src="images/logo-bioserre.png" alt="EnergyDream BioSerre" class="bio-logo-img">
+      <div class="bio-top-row">
+        <div class="bio-top-left">
+          <span class="tag" data-nl="Bio Serres & Tuinkassen" data-en="Bio Greenhouses">Bio Serres & Tuinkassen</span>
+          <h2 class="tit" data-nl="Uw eigen<br><em>bio tuin.</em><br>Het hele jaar." data-en="Your own<br><em>bio garden.</em><br>All year long.">Uw eigen<br><em>bio tuin.</em><br>Het hele jaar.</h2>
+          <p class="body" data-nl="Verse tomaten in december. Eigen kruiden elke dag. Onze luxe serres maken het mogelijk — 365 dagen per jaar oogsten, zonder chemicaliën." data-en="Fresh tomatoes in December. Your own herbs every day. Our luxury greenhouses make it possible — harvesting 365 days a year, without chemicals.">Verse tomaten in december. Eigen kruiden elke dag. 365 dagen per jaar oogsten, zonder chemicaliën.</p>
+        </div>
+        <div class="bio-logo-wrap">
+          <img src="images/logo-bioserre.png" alt="EnergyDream BioSerre" class="bio-logo-img">
+        </div>
       </div>
-      <span class="tag" data-nl="Bio Serres & Tuinkassen" data-en="Bio Greenhouses">Bio Serres & Tuinkassen</span>
-      <h2 class="tit" data-nl="Uw eigen<br><em>bio tuin.</em><br>Het hele jaar." data-en="Your own<br><em>bio garden.</em><br>All year long.">Uw eigen<br><em>bio tuin.</em><br>Het hele jaar.</h2>
-      <p class="body" data-nl="Verse tomaten in december. Eigen kruiden elke dag. Onze luxe serres maken het mogelijk — 365 dagen per jaar oogsten, zonder chemicaliën." data-en="Fresh tomatoes in December. Your own herbs every day. Our luxury greenhouses make it possible — harvesting 365 days a year, without chemicals.">Verse tomaten in december. Eigen kruiden elke dag. 365 dagen per jaar oogsten, zonder chemicaliën.</p>
       <div class="bio-stats">
         <div class="bs"><div class="bs-n">365</div><div class="bs-l" data-nl="Dagen per jaar" data-en="Days per year">Dagen per jaar</div></div>
         <div class="bs"><div class="bs-n">0%</div><div class="bs-l" data-nl="Chemicaliën" data-en="Chemicals">Chemicaliën</div></div>
