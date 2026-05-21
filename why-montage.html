@@ -1,8 +1,307 @@
-<!doctype html><html lang="nl"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Vakkundige montage — Serpvexpert</title>
-<style>body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;background:#0b1220;color:#eaf0ff}.wrap{max-width:1100px;margin:0 auto;padding:22px 18px}a{color:inherit;text-decoration:none}.btn{display:inline-block;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);font-weight:800}.card{margin-top:14px;border:1px solid rgba(255,255,255,.10);border-radius:18px;background:rgba(255,255,255,.03);padding:16px}p{color:rgba(234,240,255,.78);line-height:1.6}</style>
-</head><body><div class="wrap">
-<a class="btn" href="index.html">← Terug</a>
-<h1>Vakkundige montage</h1>
-<div class="card"><p>Hier beschrijven we stap voor stap hoe we werken: demontage, montage, afwerking en netheid op de werkplek.</p></div>
-</div></body></html>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vakkundige Montage — EnergyDream</title>
+<meta name="description" content="Hoe wij werken: professionele demontage en montage van REHAU kozijnen door heel Nederland. Netjes, snel en met 50+ jaar garantie.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.energydream.nl/why-montage.html">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --black:#080808;--dark:#111111;--dark2:#181818;
+  --gold:#c9a96e;--gold2:#e8c98a;
+  --emerald:#2d5a3d;--emerald2:#3d7a52;--sage:#7ab896;
+  --cream:#f0ece3;--text:#e0dbd0;--text2:#7a7570;
+  --border:rgba(201,169,110,0.15);--border2:rgba(201,169,110,0.32);
+}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--emerald);border-radius:2px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(8,8,8,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:var(--cream);text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#b0aca4;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-r{display:flex;align-items:center;gap:12px}
+.wa-btn{display:flex;align-items:center;gap:7px;background:#25D366;color:white;padding:9px 16px;font-size:.74rem;font-weight:500;text-decoration:none}
+.wa-btn:hover{background:#1fb855}
+.cta-nav{background:var(--gold);color:var(--black);padding:10px 20px;font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.cta-nav:hover{background:var(--gold2)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.burger span{display:block;width:24px;height:2px;background:var(--cream);transition:all .3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-mobile{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(8,8,8,.98);border-bottom:1px solid var(--border);padding:20px 24px;flex-direction:column;z-index:998}
+.nav-mobile.open{display:flex}
+.nav-mobile a{color:#b0aca4;text-decoration:none;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.nav-mobile a:hover{color:var(--gold)}
+.nav-mobile .wa-btn{margin-top:12px;justify-content:center;border-bottom:none}
+.nav-mobile .cta-nav{margin-top:8px;text-align:center;border-bottom:none}
+
+/* HERO */
+.page-hero{padding:160px 56px 80px;background:var(--dark);border-bottom:1px solid var(--border)}
+.breadcrumb{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text2);margin-bottom:20px}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.page-tag{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;line-height:1.08;color:var(--cream);margin-bottom:20px}
+.page-title em{font-style:italic;color:var(--sage)}
+.page-sub{font-size:.95rem;color:rgba(224,219,208,.55);line-height:1.85;max-width:580px}
+
+/* STEPS */
+.steps-sec{padding:90px 56px;background:var(--black)}
+.steps-intro{max-width:700px;margin:0 auto 64px;text-align:center}
+.steps-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--cream);margin-bottom:14px}
+.steps-intro h2 em{font-style:italic;color:var(--sage)}
+.steps-intro p{font-size:.92rem;color:var(--text2);line-height:1.85}
+.steps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;max-width:1000px;margin:0 auto}
+.step{background:var(--dark);border:1px solid var(--border);padding:40px 36px;position:relative;overflow:hidden;transition:border-color .25s}
+.step:hover{border-color:var(--border2)}
+.step::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .4s}
+.step:hover::before{height:100%}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(201,169,110,.12);line-height:1;margin-bottom:16px}
+.step-icon{font-size:1.6rem;margin-bottom:14px}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--cream);margin-bottom:10px}
+.step-body{font-size:.88rem;color:var(--text2);line-height:1.8}
+
+/* GARANTIE STRIP */
+.garantie-strip{background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 56px}
+.gs-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1000px;margin:0 auto}
+.gs-item{text-align:center;padding:28px 20px}
+.gs-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:6px}
+.gs-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text2)}
+
+/* WAAROM */
+.waarom-sec{padding:90px 56px;background:var(--dark)}
+.waarom-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.waarom-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--cream);margin-bottom:16px}
+.waarom-text h2 em{font-style:italic;color:var(--sage)}
+.waarom-text p{font-size:.9rem;color:var(--text2);line-height:1.85;margin-bottom:20px}
+.waarom-list{display:flex;flex-direction:column;gap:16px}
+.wl-item{display:flex;gap:14px;align-items:flex-start}
+.wl-icon{font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.wl-item strong{display:block;font-size:.9rem;color:var(--cream);margin-bottom:3px}
+.wl-item span{font-size:.83rem;color:var(--text2);line-height:1.6}
+.waarom-quote{background:linear-gradient(145deg,var(--emerald),var(--emerald2));padding:48px 40px;position:relative;overflow:hidden}
+.waarom-quote::before{content:'"';position:absolute;top:-30px;left:10px;font-family:'Cormorant Garamond',serif;font-size:14rem;color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
+.waarom-quote blockquote{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;font-style:italic;line-height:1.5;color:var(--cream);position:relative;z-index:1;margin-bottom:20px}
+.waarom-quote cite{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);font-style:normal}
+
+/* CTA */
+.cta-sec{background:var(--black);padding:90px 56px;text-align:center;border-top:1px solid var(--border)}
+.cta-sec h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--cream);margin-bottom:14px}
+.cta-sec h2 em{font-style:italic;color:var(--sage)}
+.cta-sec p{font-size:.92rem;color:var(--text2);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--black);padding:15px 32px;font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background .2s}
+.btn-gold:hover{background:var(--gold2)}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:15px 26px;font-size:.8rem;font-weight:500;text-decoration:none}
+.btn-wa:hover{background:#1fb855}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--border);padding:32px 56px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.7rem;color:rgba(224,219,208,.25)}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* ANIMATIONS */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.vis{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+
+@media(max-width:900px){
+  nav{padding:0 20px}.nav-links{display:none}.burger{display:flex}
+  .nav-r .wa-btn{display:none}
+  .page-hero{padding:120px 24px 56px}
+  .steps-sec,.waarom-sec,.cta-sec{padding:64px 24px}
+  .garantie-strip{padding:40px 24px}
+  .steps-grid{grid-template-columns:1fr}
+  .gs-inner{grid-template-columns:1fr 1fr}
+  .waarom-inner{grid-template-columns:1fr;gap:40px}
+  footer{padding:24px;flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo">Energy<span>Dream</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#vision">Visie</a></li>
+    <li><a href="index.html#windows">Ramen</a></li>
+    <li><a href="index.html#bio">Bio Serres</a></li>
+    <li><a href="index.html#packages">Pakketten</a></li>
+    <li><a href="projects.html">Projecten</a></li>
+    <li><a href="why-lux.html">Over ons</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <a href="https://wa.me/31657825303" class="wa-btn" target="_blank">💬 WhatsApp</a>
+    <a href="index.html#contact" class="cta-nav">Offerte</a>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html#vision" onclick="toggleMenu()">Visie</a>
+  <a href="index.html#windows" onclick="toggleMenu()">Ramen</a>
+  <a href="index.html#bio" onclick="toggleMenu()">Bio Serres</a>
+  <a href="index.html#packages" onclick="toggleMenu()">Pakketten</a>
+  <a href="projects.html" onclick="toggleMenu()">Projecten</a>
+  <a href="why-lux.html">Over ons</a>
+  <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+  <a href="https://wa.me/31657825303" class="wa-btn" target="_blank">💬 WhatsApp</a>
+  <a href="index.html#contact" class="cta-nav" onclick="toggleMenu()">Offerte aanvragen</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="why-lux.html">Over ons</a> / Montage</div>
+  <span class="page-tag">Werkwijze · Vakmanschap · Heel Nederland</span>
+  <h1 class="page-title">Zo werken<br><em>wij.</em></h1>
+  <p class="page-sub">Van eerste meting tot sleutelklare oplevering — EnergyDream regelt alles. Professioneel, netjes en altijd binnen de afgesproken tijd.</p>
+</section>
+
+<!-- STAPPEN -->
+<section class="steps-sec">
+  <div class="steps-intro rv">
+    <h2>Van oude kozijnen<br><em>tot nieuw comfort.</em></h2>
+    <p>Elke installatie verloopt volgens een vaste werkwijze. Zo weet u precies wat u kunt verwachten — en zorgen wij voor een resultaat zonder verrassingen.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step rv">
+      <div class="step-num">01</div>
+      <div class="step-icon">📐</div>
+      <div class="step-title">Opmeting & Advies</div>
+      <p class="step-body">Onze technisch adviseur komt bij u thuis voor een gratis opmeting. We meten elk kozijn nauwkeurig op, bespreken uw wensen qua kleur en glastype, en adviseren over het beste pakket voor uw woning en budget. U ontvangt dezelfde dag nog een vrijblijvende offerte.</p>
+    </div>
+    <div class="step rv rd1">
+      <div class="step-num">02</div>
+      <div class="step-icon">🏭</div>
+      <div class="step-title">Productie op maat</div>
+      <p class="step-body">Uw REHAU kozijnen worden op maat geproduceerd in onze fabriek — elk profiel precies op de millimeter. Kwaliteitscontrole vindt plaats vóór levering. Productietijd is gemiddeld 3–4 weken, afhankelijk van kleur en glassoort.</p>
+    </div>
+    <div class="step rv rd2">
+      <div class="step-num">03</div>
+      <div class="step-icon">🔨</div>
+      <div class="step-title">Demontage oude kozijnen</div>
+      <p class="step-body">Op de afgesproken dag arriveert ons team stipt op tijd. We beschermen uw vloer en meubels, demonteren de oude kozijnen zorgvuldig en voeren al het oud materiaal direct af. U heeft geen omkijken naar de rommel.</p>
+    </div>
+    <div class="step rv rd3">
+      <div class="step-num">04</div>
+      <div class="step-icon">🪟</div>
+      <div class="step-title">Montage nieuwe REHAU kozijnen</div>
+      <p class="step-body">De nieuwe kozijnen worden waterpas, loodrecht en kierdicht geplaatst. We gebruiken isolerende kier- en voegmaterialen voor een perfecte lucht- en waterdichtheid. Elk kozijn wordt individueel gecontroleerd op opening, sluiting en isolatiewaarde.</p>
+    </div>
+    <div class="step rv">
+      <div class="step-num">05</div>
+      <div class="step-icon">🎨</div>
+      <div class="step-title">Afwerking & Kitwerk</div>
+      <p class="step-body">Na montage verzorgen we de volledige afwerking: kitvoegen worden strak afgewerkt, binnendorpels worden geplaatst en alle zichtbare aansluitingen worden netjes gecosmetisch afgewerkt. Het eindresultaat ziet er direct uit als een professionele klus.</p>
+    </div>
+    <div class="step rv rd1">
+      <div class="step-num">06</div>
+      <div class="step-icon">✅</div>
+      <div class="step-title">Oplevering & Nazorg</div>
+      <p class="step-body">We lopen samen de oplevering door: u controleert elk kozijn, we leggen de garantiebewijzen neer en ruimen alles op. Uw oprit verlaten we zoals we hem aantroffen — schoon. Na aflevering zijn we altijd bereikbaar voor vragen of service.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="garantie-strip">
+  <div class="gs-inner">
+    <div class="gs-item rv">
+      <div class="gs-num">1 dag</div>
+      <div class="gs-label">Gemiddelde montage</div>
+    </div>
+    <div class="gs-item rv rd1">
+      <div class="gs-num">50+</div>
+      <div class="gs-label">Jaar garantie profielen</div>
+    </div>
+    <div class="gs-item rv rd2">
+      <div class="gs-num">NL</div>
+      <div class="gs-label">Heel Nederland</div>
+    </div>
+    <div class="gs-item rv rd3">
+      <div class="gs-num">0</div>
+      <div class="gs-label">Rommel na oplevering</div>
+    </div>
+  </div>
+</div>
+
+<!-- WAAROM -->
+<section class="waarom-sec">
+  <div class="waarom-inner">
+    <div class="waarom-text rv">
+      <h2>Waarom kiezen voor<br><em>EnergyDream montage?</em></h2>
+      <p>Wij zijn geen dealer die uitbesteedt. Onze eigen monteurs installeren elk kozijn — met 17 jaar ervaring en met oog voor elk detail.</p>
+      <div class="waarom-list">
+        <div class="wl-item">
+          <div class="wl-icon">🏆</div>
+          <div>
+            <strong>Gecertificeerde monteurs</strong>
+            <span>Alle monteurs zijn REHAU gecertificeerd en werken uitsluitend met originele materialen en gereedschappen.</span>
+          </div>
+        </div>
+        <div class="wl-item">
+          <div class="wl-icon">📋</div>
+          <div>
+            <strong>Vaste prijs, geen verrassingen</strong>
+            <span>Alles staat vooraf in de offerte. Geen extra kosten achteraf voor afvoer, materialen of afwerking.</span>
+          </div>
+        </div>
+        <div class="wl-item">
+          <div class="wl-icon">🔧</div>
+          <div>
+            <strong>Alles in eigen beheer</strong>
+            <span>Van opmeting tot oplevering — geen uitbesteding, geen vertraging. U heeft altijd één aanspreekpunt.</span>
+          </div>
+        </div>
+        <div class="wl-item">
+          <div class="wl-icon">📍</div>
+          <div>
+            <strong>Heel Nederland</strong>
+            <span>Onze volledig uitgeruste bedrijfswagens rijden dagelijks door heel Nederland. Van Amsterdam tot Maastricht.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="waarom-quote rv rd2">
+      <blockquote>"We staan zelf op de ladder. Uw woning is ons visitekaartje — en dat nemen we serieus."</blockquote>
+      <cite>— De oprichters van EnergyDream</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2 class="rv">Klaar voor nieuwe<br><em>kozijnen?</em></h2>
+  <p class="rv rd1">Gratis adviesgesprek en opmeting. Vrijblijvende offerte. Binnen 24 uur reactie.</p>
+  <div class="cta-btns rv rd2">
+    <a href="index.html#contact" class="btn-gold">Gratis offerte aanvragen</a>
+    <a href="https://wa.me/31657825303" class="btn-wa" target="_blank">💬 WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 EnergyDream.nl — KVK: 69632022 · Spijkenisse · Officieel REHAU Partner</span>
+  <span><a href="index.html">Home</a> · <a href="why-lux.html">Over ons</a> · <a href="why-prijsopties.html">Prijsopties</a> · <a href="projects.html">Projecten</a></span>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('nav-mobile').classList.toggle('open');
+}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
