@@ -58,6 +58,12 @@ nav.solid{background:rgba(8,8,8,.97);border-color:var(--border);backdrop-filter:
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{font-size:1.1rem;letter-spacing:.1em;text-transform:uppercase;color:#b0aca4;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
+.nav-links .dropdown{position:relative}
+.nav-links .dropdown>a::after{content:' ▾';font-size:.6em;vertical-align:middle;opacity:.6}
+.nav-links .drop-menu{display:none;position:absolute;top:100%;left:0;background:rgba(8,8,8,.98);border:1px solid var(--border);min-width:180px;z-index:1000;padding:8px 0}
+.nav-links .dropdown:hover .drop-menu{display:block}
+.nav-links .drop-menu a{display:block;padding:10px 20px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#b0aca4;text-decoration:none;transition:color .2s;border-bottom:none}
+.nav-links .drop-menu a:hover{color:var(--gold);background:rgba(201,169,110,.05)}
 .nav-r{display:flex;align-items:center;gap:12px}
 .lang{display:flex;border:1px solid var(--border2);border-radius:2px;overflow:hidden}
 .lang button{background:none;border:none;cursor:pointer;padding:6px 12px;font-family:'DM Sans',sans-serif;font-size:.7rem;color:var(--text2);transition:all .2s}
@@ -425,7 +431,12 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
     <li><a href="#bio" data-nl="Bio Serres" data-en="Bio Serres">Bio Serres</a></li>
     <li><a href="#packages" data-nl="Pakketten" data-en="Packages">Pakketten</a></li>
     <li><a href="projects.html" data-nl="Projecten" data-en="Projects">Projecten</a></li>
-    <li><a href="why-lux.html" data-nl="Over ons" data-en="About us">Over ons</a></li>
+    <li class="dropdown"><a href="why-lux.html" data-nl="Over ons" data-en="About us">Over ons</a>
+      <div class="drop-menu">
+        <a href="why-montage.html" data-nl="Onze werkwijze" data-en="Our method">Onze werkwijze</a>
+        <a href="why-prijsopties.html" data-nl="Prijsopties" data-en="Pricing options">Prijsopties</a>
+      </div>
+    </li>
     <li><a href="#contact" data-nl="Contact" data-en="Contact">Contact</a></li>
   </ul>
   <div class="nav-r">
@@ -444,7 +455,9 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
   <a href="#bio" onclick="toggleMenu()">Bio Serres</a>
   <a href="#packages" onclick="toggleMenu()">Pakketten</a>
   <a href="projects.html" onclick="toggleMenu()">Projecten</a>
-  <a href="why-lux.html">Over ons</a>
+  <a href="why-lux.html" onclick="toggleMenu()">Over ons</a>
+  <a href="why-montage.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Onze werkwijze</a>
+  <a href="why-prijsopties.html" onclick="toggleMenu()" style="padding-left:28px;font-size:.85rem;opacity:.75">↳ Prijsopties</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
   <a href="https://wa.me/31657825303" class="wa-btn" target="_blank">💬 WhatsApp</a>
   <a href="#contact" class="cta-nav" onclick="toggleMenu()">Offerte aanvragen</a>
