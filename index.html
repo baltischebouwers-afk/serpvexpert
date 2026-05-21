@@ -284,10 +284,11 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
 
 /* MOBILE */
 @media(max-width:900px){
-  nav{padding:0 20px}.nav-links{display:none}.burger{display:flex}
+  nav{padding:0 16px}.nav-links{display:none}.burger{display:flex}
   .nav-r .wa-btn{display:none}
-  .nav-r .review-btn{display:flex;padding:7px 10px;font-size:.65rem}
-  .cta-nav{font-size:.7rem;padding:8px 10px}
+  .nav-r .review-btn{display:none}
+  .nav-r .cta-nav{display:none}
+  .nav-r .lang{display:none}
   .burger{padding:10px;gap:6px}
   .burger span{width:28px;height:2.5px}
   .cta-nav{font-size:.8rem;padding:8px 14px}
@@ -454,6 +455,10 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:60px 5
   </div>
 </nav>
 <div class="nav-mobile" id="nav-mobile">
+  <div class="lang" style="margin-bottom:8px;border-bottom:none;width:fit-content">
+    <button class="on" onclick="setLang('nl');toggleMenu()">NL</button>
+    <button onclick="setLang('en');toggleMenu()">EN</button>
+  </div>
   <a href="#vision" onclick="toggleMenu()">Visie</a>
   <a href="#windows" onclick="toggleMenu()">Ramen</a>
   <a href="#bio" onclick="toggleMenu()">Bio Serres</a>
